@@ -3,11 +3,8 @@ import { getSpot } from '../content/themes'
 import type { ThemeId } from '../content/types'
 import { Icon } from '../components/Icons'
 import { StickerReward } from '../components/StickerReward'
-import {
-  markSticker,
-  loadProgress,
-  isCourageUnlocked,
-} from '../lib/progress'
+import { useAuthProgress } from '../context/AuthProgressContext'
+import { isCourageUnlocked } from '../lib/progress'
 import { useState } from 'react'
 
 type Phase = 'ask' | 'interact' | 'explain' | 'sticker'
@@ -15,13 +12,15 @@ type Phase = 'ask' | 'interact' | 'explain' | 'sticker'
 export function WhyFlow() {
   const { themeId, spotId } = useParams<{ themeId: string; spotId: string }>()
   const navigate = useNavigate()
+  const { progress, markSticker } = useAuthProgress()
   const data = getSpot(themeId as ThemeId, spotId ?? '')
-  const already = spotId ? loadProgress().stickers.includes(spotId) : false
+  const already = spotId ? progress.stickers.includes(spotId) : false
 
   const [phase, setPhase] = useState<Phase>('ask')
   const [picked, setPicked] = useState<string | null>(null)
   const [order, setOrder] = useState<string[]>([])
   const [feedback, setFeedback] = useState<string | null>(null)
+  const [latest, setLatest] = useState(progress)
 
   if (!data) {
     return (
@@ -68,13 +67,13 @@ export function WhyFlow() {
   }
 
   function claimSticker() {
-    markSticker(spot.id)
+    const next = markSticker(spot.id)
+    setLatest(next)
     setPhase('sticker')
   }
 
   function afterSticker() {
-    const progress = loadProgress()
-    if (isCourageUnlocked(theme.id, progress.stickers)) {
+    if (isCourageUnlocked(theme.id, latest.stickers)) {
       navigate(`/courage/${theme.id}`)
     } else {
       navigate(`/scene/${theme.id}`)
@@ -183,7 +182,7 @@ export function WhyFlow() {
           label={spot.stickerLabel}
           onContinue={afterSticker}
           continueLabel={
-            isCourageUnlocked(theme.id, loadProgress().stickers)
+            isCourageUnlocked(theme.id, latest.stickers)
               ? '去勇氣挑戰'
               : '回場景繼續探索'
           }

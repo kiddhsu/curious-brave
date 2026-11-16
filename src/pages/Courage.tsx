@@ -1,22 +1,19 @@
 import { Link, useNavigate, useParams } from 'react-router-dom'
-import { getTheme } from '../content/themes'
+import { getTheme, themes } from '../content/themes'
 import type { ThemeId } from '../content/types'
 import { Icon } from '../components/Icons'
-import { themes } from '../content/themes'
-import {
-  isCourageUnlocked,
-  loadProgress,
-  markCourage,
-} from '../lib/progress'
+import { useAuthProgress } from '../context/AuthProgressContext'
+import { isCourageUnlocked } from '../lib/progress'
 import { useState } from 'react'
 
 export function Courage() {
   const { themeId } = useParams<{ themeId: string }>()
   const navigate = useNavigate()
+  const { progress, markCourage } = useAuthProgress()
   const theme = getTheme(themeId as ThemeId)
-  const progress = loadProgress()
   const [chosen, setChosen] = useState<string | null>(null)
   const [done, setDone] = useState(false)
+  const [doneCount, setDoneCount] = useState(progress.courageDone.length)
 
   if (!theme) {
     return (
@@ -49,7 +46,8 @@ export function Courage() {
       setDone(false)
       return
     }
-    markCourage(theme!.id)
+    const next = markCourage(theme!.id)
+    setDoneCount(next.courageDone.length)
     setDone(true)
   }
 
@@ -99,7 +97,7 @@ export function Courage() {
                 </div>
                 <p className="reward__msg">
                   「{theme.name}」勇氣完成！
-                  {loadProgress().courageDone.length >= themes.length
+                  {doneCount >= themes.length
                     ? '全部主題勇氣都完成了！'
                     : '還可以去其他主題探險。'}
                 </p>

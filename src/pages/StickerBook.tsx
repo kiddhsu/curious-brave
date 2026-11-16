@@ -1,15 +1,11 @@
 import { Link } from 'react-router-dom'
 import { themes } from '../content/themes'
 import { Icon } from '../components/Icons'
-import {
-  loadProgress,
-  resetProgress,
-  totalStickerTarget,
-} from '../lib/progress'
-import { useState } from 'react'
+import { useAuthProgress } from '../context/AuthProgressContext'
+import { totalStickerTarget } from '../lib/progress'
 
 export function StickerBook() {
-  const [progress, setProgress] = useState(() => loadProgress())
+  const { progress, resetProgress } = useAuthProgress()
   const total = totalStickerTarget()
 
   return (
@@ -64,8 +60,8 @@ export function StickerBook() {
         type="button"
         className="btn btn--ghost btn--block"
         onClick={() => {
-          if (window.confirm('確定要清空進度嗎？')) {
-            setProgress(resetProgress())
+          if (window.confirm('確定要清空進度嗎？登入時雲端也會一起清空。')) {
+            resetProgress()
           }
         }}
       >

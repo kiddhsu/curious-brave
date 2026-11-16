@@ -25,6 +25,16 @@ npm run dev
 
 遊戲內解說為原創低年級口吻，參考公開科普常識撰寫。
 
+## 登入與雲端進度（Firebase）
+
+可與「小老師就是妳」**共用同一 Firebase 專案**；好奇小勇者使用獨立 collection：`curiousBrave/{uid}`。
+
+1. 複製 [`.env.example`](.env.example) 成 `.env.local`，填入同一組 `VITE_FIREBASE_*`  
+2. 在 Firebase Console 把本機／部署網域加到 Authentication → Authorized domains  
+3. 把本 repo 的 [`firestore.rules`](firestore.rules) 貼到 Firestore（含既有 `users`＋新增 `curiousBrave`）後發布  
+
+未設定環境變數時仍可本機遊玩，進度只存在 `localStorage`。
+
 ## 進度
 
-進度存在瀏覽器 `localStorage`，可在貼紙冊清空。
+本機＋（登入後）雲端同步；可在貼紙冊清空。

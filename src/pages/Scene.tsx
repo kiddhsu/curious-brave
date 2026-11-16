@@ -3,9 +3,9 @@ import { getTheme } from '../content/themes'
 import type { ThemeId } from '../content/types'
 import { Hotspot } from '../components/Hotspot'
 import { Icon } from '../components/Icons'
+import { useAuthProgress } from '../context/AuthProgressContext'
 import {
   isCourageUnlocked,
-  loadProgress,
   stageStickerCount,
   themeStickerCount,
 } from '../lib/progress'
@@ -13,8 +13,8 @@ import {
 export function Scene() {
   const { themeId } = useParams<{ themeId: string }>()
   const navigate = useNavigate()
+  const { progress } = useAuthProgress()
   const theme = getTheme(themeId as ThemeId)
-  const progress = loadProgress()
 
   if (!theme) {
     return (

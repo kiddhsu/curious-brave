@@ -6,6 +6,45 @@
     max(24px, env(safe-area-inset-bottom));
 }
 
+.auth-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  padding: 4px 0;
+  margin-bottom: 4px;
+}
+
+.auth-bar--muted {
+  margin: 0 0 4px;
+  color: var(--muted);
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.auth-bar__user {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--muted);
+  flex: 1;
+  min-width: 0;
+}
+
+.auth-bar__btn {
+  min-height: 40px;
+  padding: 0 14px;
+  font-size: 0.9rem;
+}
+
+.auth-bar__error {
+  width: 100%;
+  margin: 0;
+  color: var(--coral);
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
 .page {
   display: flex;
   flex-direction: column;

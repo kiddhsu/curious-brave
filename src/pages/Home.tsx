@@ -1,19 +1,21 @@
 import { Link } from 'react-router-dom'
 import { themes } from '../content/themes'
+import { AuthBar } from '../components/AuthBar'
 import { Icon } from '../components/Icons'
+import { useAuthProgress } from '../context/AuthProgressContext'
 import {
   isCourageUnlocked,
-  loadProgress,
   themeStickerCount,
   totalStickerTarget,
 } from '../lib/progress'
 
 export function Home() {
-  const progress = loadProgress()
+  const { progress } = useAuthProgress()
   const total = totalStickerTarget()
 
   return (
     <main className="page home">
+      <AuthBar />
       <header className="hero">
         <p className="hero__brand">好奇小勇者</p>
         <h1 className="hero__line">先問為什麼，再練習小勇氣</h1>

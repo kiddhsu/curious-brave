@@ -6,35 +6,64 @@ const KEY = 'curious-brave-progress-v3'
 export type ProgressState = {
   stickers: string[]
   courageDone: ThemeId[]
+  updatedAt?: number
 }
 
-function empty(): ProgressState {
-  return { stickers: [], courageDone: [] }
+export function emptyProgress(): ProgressState {
+  return { stickers: [], courageDone: [], updatedAt: Date.now() }
 }
 
 export function loadProgress(): ProgressState {
   try {
     const raw = localStorage.getItem(KEY)
-    if (!raw) return empty()
+    if (!raw) return emptyProgress()
     const parsed = JSON.parse(raw) as ProgressState
     return {
       stickers: Array.isArray(parsed.stickers) ? parsed.stickers : [],
       courageDone: Array.isArray(parsed.courageDone) ? parsed.courageDone : [],
+      updatedAt: parsed.updatedAt,
     }
   } catch {
-    return empty()
+    return emptyProgress()
   }
 }
 
-export function saveProgress(state: ProgressState) {
-  localStorage.setItem(KEY, JSON.stringify(state))
+type CloudSaver = (state: ProgressState) => void
+
+let cloudSaver: CloudSaver | null = null
+
+export function registerCloudProgressSaver(saver: CloudSaver | null) {
+  cloudSaver = saver
+}
+
+export function saveProgress(
+  state: ProgressState,
+  options?: { skipCloud?: boolean },
+) {
+  const next = { ...state, updatedAt: Date.now() }
+  localStorage.setItem(KEY, JSON.stringify(next))
+  if (!options?.skipCloud) cloudSaver?.(next)
+  return next
+}
+
+export function mergeProgress(
+  a: ProgressState,
+  b: ProgressState,
+): ProgressState {
+  return {
+    stickers: [...new Set([...a.stickers, ...b.stickers])],
+    courageDone: [
+      ...new Set([...a.courageDone, ...b.courageDone]),
+    ] as ThemeId[],
+    updatedAt: Math.max(a.updatedAt ?? 0, b.updatedAt ?? 0, Date.now()),
+  }
 }
 
 export function markSticker(spotId: string): ProgressState {
   const state = loadProgress()
   if (!state.stickers.includes(spotId)) {
     state.stickers.push(spotId)
-    saveProgress(state)
+    return saveProgress(state)
   }
   return state
 }
@@ -43,7 +72,7 @@ export function markCourage(themeId: ThemeId): ProgressState {
   const state = loadProgress()
   if (!state.courageDone.includes(themeId)) {
     state.courageDone.push(themeId)
-    saveProgress(state)
+    return saveProgress(state)
   }
   return state
 }
@@ -68,12 +97,10 @@ export function stageStickerCount(
   return { got, total: ids.length }
 }
 
-/** 關卡全部開放，不鎖 */
 export function isThemeUnlocked(_themeId: ThemeId, _courageDone: ThemeId[]) {
   return true
 }
 
-/** 階段全部開放，不鎖 */
 export function isStageUnlocked(
   _themeId: ThemeId,
   _stage: 1 | 2 | 3,
@@ -100,6 +127,5 @@ export function totalStickerTarget() {
 }
 
 export function resetProgress() {
-  saveProgress(empty())
-  return empty()
+  return saveProgress(emptyProgress())
 }
