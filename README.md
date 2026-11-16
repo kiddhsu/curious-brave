@@ -33,7 +33,16 @@ npm run dev
 2. 在 Firebase Console 把本機／部署網域加到 Authentication → Authorized domains  
 3. 把本 repo 的 [`firestore.rules`](firestore.rules) 貼到 Firestore（含既有 `users`＋新增 `curiousBrave`）後發布  
 
-未設定環境變數時仍可本機遊玩，進度只存在 `localStorage`。
+未設定環境變數時仍可本機遊玩，進度只存在 `localStorage`。GitHub Pages 需在 repo **Settings → Secrets and variables → Actions** 注入同樣的 `VITE_FIREBASE_*`。
+
+## 線上版（GitHub Pages）
+
+網址：`https://kiddhsu.github.io/curious-brave/`
+
+1. 第一次到 repo **Settings → Pages → Build and deployment → Source** 選 **GitHub Actions**  
+2. 設定上述 Firebase Secrets（可從小老師 repo 複製同名 secrets）  
+3. push 到 `main`，或在 Actions 手動跑 **Deploy GitHub Pages**  
+4. Firebase Authentication → Authorized domains 加上 `kiddhsu.github.io`
 
 ## 進度
 
