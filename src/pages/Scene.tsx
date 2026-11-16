@@ -4,11 +4,7 @@ import type { ThemeId } from '../content/types'
 import { Hotspot } from '../components/Hotspot'
 import { Icon } from '../components/Icons'
 import { useAuthProgress } from '../context/AuthProgressContext'
-import {
-  isCourageUnlocked,
-  stageStickerCount,
-  themeStickerCount,
-} from '../lib/progress'
+import { isCourageUnlocked, themeStickerCount } from '../lib/progress'
 
 export function Scene() {
   const { themeId } = useParams<{ themeId: string }>()
@@ -43,19 +39,8 @@ export function Scene() {
         </div>
       </header>
 
-      <div className="stage-bar" aria-label="題目分區">
-        {([1, 2, 3] as const).map((s) => {
-          const count = stageStickerCount(theme.id, s, progress.stickers)
-          return (
-            <div key={s} className="stage-pill stage-pill--open">
-              區 {s} · {count.got}/{count.total}
-            </div>
-          )
-        })}
-      </div>
-
       <p className="scene-hint">
-        {theme.sceneLabel}：先收集貼紙，再挑戰勇氣
+        {theme.sceneLabel}：點問號收集貼紙（{got}/{total}），集滿再挑戰勇氣
       </p>
 
       <div

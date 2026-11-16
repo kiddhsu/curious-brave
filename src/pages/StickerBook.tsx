@@ -43,7 +43,7 @@ export function StickerBook() {
                       <Icon name={got ? spot.icon : 'question'} size={28} />
                     </span>
                     <span className="sticker-slot__label">
-                      {got ? spot.stickerLabel : `區${spot.stage}`}
+                      {got ? spot.stickerLabel : '還沒得到'}
                     </span>
                   </div>
                 )
