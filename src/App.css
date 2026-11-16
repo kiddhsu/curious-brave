@@ -294,87 +294,647 @@
 .scene__art {
   position: absolute;
   inset: 0;
-  background:
-    linear-gradient(180deg, #b8ecff 0%, #e8fff6 55%, color-mix(in srgb, var(--accent) 28%, #fff) 100%);
 }
 
-.scene__sun {
+.scene__sky,
+.scene__layer,
+.scene__deco {
   position: absolute;
-  top: 12%;
+  pointer-events: none;
+}
+
+.scene__sky {
+  inset: 0;
+}
+
+.scene__layer,
+.scene__deco {
+  inset: auto;
+}
+
+/* —— 身體探險站：小人剪影＋胸口心跳 —— */
+.scene[data-theme='body'] .scene__sky {
+  background: linear-gradient(180deg, #ffe9d6 0%, #fff4ea 50%, #ffd8c4 100%);
+}
+
+/* 頭 */
+.scene[data-theme='body'] .scene__layer--far {
+  left: 50%;
+  top: 8%;
+  width: 72px;
+  height: 72px;
+  margin-left: -36px;
+  border-radius: 50%;
+  background: #ffc6a8;
+  box-shadow: inset -8px -6px 0 rgba(232, 140, 110, 0.18);
+}
+
+.scene[data-theme='body'] .scene__layer--far::before,
+.scene[data-theme='body'] .scene__layer--far::after {
+  content: '';
+  position: absolute;
+  top: 32px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #c47a5a;
+}
+
+.scene[data-theme='body'] .scene__layer--far::before {
+  left: 20px;
+}
+
+.scene[data-theme='body'] .scene__layer--far::after {
+  right: 20px;
+}
+
+/* 身體軀幹 */
+.scene[data-theme='body'] .scene__layer--mid {
+  left: 50%;
+  top: 28%;
+  width: 110px;
+  height: 150px;
+  margin-left: -55px;
+  border-radius: 48px 48px 36px 36px;
+  background: linear-gradient(180deg, #ffb89a, #f2a07e);
+}
+
+/* 手臂 */
+.scene[data-theme='body'] .scene__layer--mid::before,
+.scene[data-theme='body'] .scene__layer--mid::after {
+  content: '';
+  position: absolute;
+  top: 28px;
+  width: 28px;
+  height: 88px;
+  border-radius: 999px;
+  background: #ffb89a;
+}
+
+.scene[data-theme='body'] .scene__layer--mid::before {
+  left: -24px;
+  transform: rotate(18deg);
+}
+
+.scene[data-theme='body'] .scene__layer--mid::after {
+  right: -24px;
+  transform: rotate(-18deg);
+}
+
+/* 腳 */
+.scene[data-theme='body'] .scene__layer--near {
+  left: 50%;
+  bottom: 4%;
+  width: 96px;
+  height: 70px;
+  margin-left: -48px;
+  background: transparent;
+  border-radius: 0;
+}
+
+.scene[data-theme='body'] .scene__layer--near::before,
+.scene[data-theme='body'] .scene__layer--near::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 34px;
+  height: 70px;
+  border-radius: 18px;
+  background: #f2a07e;
+}
+
+.scene[data-theme='body'] .scene__layer--near::before {
+  left: 8px;
+}
+
+.scene[data-theme='body'] .scene__layer--near::after {
+  right: 8px;
+}
+
+/* 胸口心臟（器官感，不是情人愛心） */
+.scene[data-theme='body'] .scene__deco--1 {
+  left: 50%;
+  top: 36%;
+  width: 34px;
+  height: 28px;
+  margin-left: -8px;
+  background: #ff5f7a;
+  border-radius: 50% 50% 50% 50% / 40% 40% 60% 60%;
+  animation: scene-heart-beat 1.4s ease-in-out infinite;
+  box-shadow: -10px 2px 0 -2px #ff8fa3;
+}
+
+.scene[data-theme='body'] .scene__deco--2 {
+  left: 22%;
+  top: 42%;
+  width: 36px;
+  height: 48px;
+  border-radius: 50% 20% 40% 50%;
+  background: rgba(255, 180, 200, 0.45);
+  transform: rotate(-12deg);
+}
+
+.scene[data-theme='body'] .scene__deco--3 {
+  right: 22%;
+  top: 42%;
+  width: 36px;
+  height: 48px;
+  border-radius: 20% 50% 50% 40%;
+  background: rgba(255, 180, 200, 0.45);
+  transform: rotate(12deg);
+}
+
+/* —— 森林觀察站 —— */
+.scene[data-theme='creatures'] .scene__sky {
+  background: linear-gradient(180deg, #b8ebff 0%, #e8fff2 52%, #c5e8c8 100%);
+}
+
+.scene[data-theme='creatures'] .scene__layer--far {
+  width: 58px;
+  height: 58px;
+  top: 10%;
   right: 14%;
-  width: 64px;
-  height: 64px;
   border-radius: 50%;
   background: #ffe27a;
-  box-shadow: 0 0 0 10px rgba(255, 226, 122, 0.28);
+  box-shadow: 0 0 0 12px rgba(255, 226, 122, 0.28);
 }
 
-.scene__hill {
-  position: absolute;
-  border-radius: 50%;
-  background: color-mix(in srgb, var(--accent) 35%, #dff8e8);
-}
-
-.scene__hill--a {
-  width: 140%;
-  height: 70%;
-  left: -20%;
-  bottom: -35%;
-}
-
-.scene__hill--b {
-  width: 90%;
-  height: 55%;
-  right: -25%;
+.scene[data-theme='creatures'] .scene__layer--mid {
+  left: -18%;
   bottom: -28%;
+  width: 120%;
+  height: 62%;
+  border-radius: 50%;
+  background: #7dcb8c;
+}
+
+.scene[data-theme='creatures'] .scene__layer--near {
+  right: -20%;
+  bottom: -22%;
+  width: 80%;
+  height: 48%;
+  border-radius: 50%;
+  background: #5fba75;
+}
+
+.scene[data-theme='creatures'] .scene__deco--1,
+.scene[data-theme='creatures'] .scene__deco--2,
+.scene[data-theme='creatures'] .scene__deco--3 {
+  bottom: 16%;
+  width: 0;
+  height: 0;
+  border-left: 28px solid transparent;
+  border-right: 28px solid transparent;
+  border-bottom: 70px solid #3f9a58;
+}
+
+.scene[data-theme='creatures'] .scene__deco--1 {
+  left: 10%;
+  border-left-width: 34px;
+  border-right-width: 34px;
+  border-bottom-width: 88px;
+  border-bottom-color: #3a8f52;
+}
+
+.scene[data-theme='creatures'] .scene__deco--2 {
+  left: 28%;
+  bottom: 14%;
+  border-bottom-color: #4caf66;
+}
+
+.scene[data-theme='creatures'] .scene__deco--3 {
+  right: 16%;
+  border-left-width: 30px;
+  border-right-width: 30px;
+  border-bottom-width: 78px;
+}
+
+.scene[data-theme='creatures'] .scene__deco--1::after,
+.scene[data-theme='creatures'] .scene__deco--2::after,
+.scene[data-theme='creatures'] .scene__deco--3::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -78px;
+  width: 10px;
+  height: 22px;
+  transform: translateX(-50%);
+  background: #8b5a3c;
+  border-radius: 3px;
+}
+
+.scene[data-theme='creatures'] .scene__deco--1::after {
+  bottom: -96px;
+  height: 28px;
+}
+
+/* —— 星空觀測台 —— */
+.scene[data-theme='space'] .scene__sky {
+  background:
+    radial-gradient(circle at 18% 22%, rgba(255, 255, 255, 0.95) 0 1.5px, transparent 2px),
+    radial-gradient(circle at 42% 14%, rgba(255, 255, 255, 0.85) 0 1px, transparent 2px),
+    radial-gradient(circle at 68% 28%, rgba(255, 255, 255, 0.9) 0 1.5px, transparent 2px),
+    radial-gradient(circle at 82% 12%, rgba(255, 255, 255, 0.7) 0 1px, transparent 2px),
+    radial-gradient(circle at 30% 48%, rgba(255, 255, 255, 0.75) 0 1px, transparent 2px),
+    radial-gradient(circle at 55% 40%, rgba(255, 255, 255, 0.9) 0 1.5px, transparent 2px),
+    radial-gradient(circle at 12% 62%, rgba(255, 255, 255, 0.65) 0 1px, transparent 2px),
+    radial-gradient(circle at 76% 58%, rgba(255, 255, 255, 0.8) 0 1px, transparent 2px),
+    linear-gradient(180deg, #13233f 0%, #2a4d7a 48%, #6fa3d8 100%);
+}
+
+.scene[data-theme='space'] .scene__layer--far {
+  width: 72px;
+  height: 72px;
+  top: 12%;
+  right: 16%;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #fff6d0, #f0d27a 55%, #d9b14a);
+  box-shadow: 0 0 0 10px rgba(255, 233, 168, 0.16);
+}
+
+.scene[data-theme='space'] .scene__layer--mid {
+  width: 96px;
+  height: 96px;
+  left: 10%;
+  bottom: 22%;
+  border-radius: 50%;
+  background: radial-gradient(circle at 40% 35%, #9ad0ff, #4f86c6 60%, #2f5f9a);
+  box-shadow: 0 0 0 8px rgba(154, 208, 255, 0.18);
+}
+
+.scene[data-theme='space'] .scene__layer--near {
+  left: -5%;
+  right: -5%;
+  bottom: 0;
+  height: 18%;
+  background: linear-gradient(180deg, #3d5f88, #2a425f);
+  clip-path: polygon(0 40%, 12% 18%, 28% 45%, 46% 10%, 62% 38%, 78% 8%, 100% 42%, 100% 100%, 0 100%);
+}
+
+.scene[data-theme='space'] .scene__deco--1 {
+  width: 120px;
+  height: 18px;
+  left: 4%;
+  bottom: 34%;
+  border: 3px solid rgba(180, 220, 255, 0.55);
+  border-radius: 50%;
+  background: transparent;
+  transform: rotate(-18deg);
+}
+
+.scene[data-theme='space'] .scene__deco--2 {
+  width: 14px;
+  height: 14px;
+  top: 34%;
+  left: 48%;
+  border-radius: 50%;
+  background: #ffd27a;
+  box-shadow: 0 0 12px rgba(255, 210, 122, 0.7);
+}
+
+.scene[data-theme='space'] .scene__deco--3 {
+  width: 8px;
+  height: 8px;
+  top: 22%;
+  left: 36%;
+  border-radius: 50%;
+  background: #c9e7ff;
+}
+
+/* —— 小小實驗室 —— */
+.scene[data-theme='lab'] .scene__sky {
+  background:
+    linear-gradient(90deg, transparent 12%, rgba(255, 255, 255, 0.35) 12% 13%, transparent 13%),
+    linear-gradient(180deg, #ffe4c2 0%, #fff7ec 46%, #ffd7ae 100%);
+}
+
+.scene[data-theme='lab'] .scene__layer--far {
+  top: 8%;
+  left: 10%;
+  width: 42%;
+  height: 34%;
+  border-radius: 12px;
+  background:
+    linear-gradient(#fff 0 0) 0 0 / 50% 50%,
+    linear-gradient(#fff 0 0) 100% 0 / 50% 50%,
+    linear-gradient(#fff 0 0) 0 100% / 50% 50%,
+    linear-gradient(#fff 0 0) 100% 100% / 50% 50%;
+  background-repeat: no-repeat;
+  background-color: #8ec5ff;
+  border: 4px solid #f2c58a;
+  box-shadow: inset 0 0 0 6px rgba(255, 255, 255, 0.35);
   opacity: 0.85;
 }
 
-.scene__prop {
-  position: absolute;
-  border-radius: 16px;
-  background: color-mix(in srgb, var(--accent) 55%, white);
-  opacity: 0.55;
+.scene[data-theme='lab'] .scene__layer--mid {
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 28%;
+  background: linear-gradient(180deg, #d9b07a, #c4975f);
+  border-top: 6px solid #e8c89a;
 }
 
-.scene__prop--1 {
-  width: 70px;
+.scene[data-theme='lab'] .scene__layer--near {
+  display: none;
+}
+
+.scene[data-theme='lab'] .scene__deco--1 {
+  left: 16%;
+  bottom: 28%;
+  width: 42px;
   height: 70px;
-  left: 12%;
-  bottom: 18%;
+  background: linear-gradient(180deg, transparent 0 18%, #7ad7c7 18% 100%);
+  border: 3px solid #5bb8a8;
+  border-top: 0;
+  border-radius: 0 0 22px 22px;
+  clip-path: polygon(18% 0, 82% 0, 100% 100%, 0 100%);
 }
 
-.scene__prop--2 {
-  width: 48px;
-  height: 88px;
+.scene[data-theme='lab'] .scene__deco--1::before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  left: 8px;
+  right: 8px;
+  height: 10px;
+  background: #5bb8a8;
+  border-radius: 4px;
+}
+
+.scene[data-theme='lab'] .scene__deco--2 {
+  left: 42%;
+  bottom: 28%;
+  width: 36px;
+  height: 58px;
+  background: linear-gradient(180deg, transparent 0 22%, #ffb4a2 22% 100%);
+  border: 3px solid #e8927d;
+  border-top: 0;
+  border-radius: 0 0 18px 18px;
+  clip-path: polygon(20% 0, 80% 0, 100% 100%, 0 100%);
+}
+
+.scene[data-theme='lab'] .scene__deco--2::before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  left: 6px;
+  right: 6px;
+  height: 10px;
+  background: #e8927d;
+  border-radius: 4px;
+}
+
+.scene[data-theme='lab'] .scene__deco--3 {
   right: 18%;
-  bottom: 14%;
-  border-radius: 24px 24px 8px 8px;
+  bottom: 28%;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: conic-gradient(from 210deg, #ffd27a, #ff8fab, #7ad7c7, #8ec5ff, #ffd27a);
+  border: 3px solid #fff;
+  opacity: 0.9;
 }
 
-.scene[data-theme='creatures'] .scene__art {
-  background: linear-gradient(180deg, #d9f5e4, #eefbf2 50%, #c8ebd4);
+/* —— 心情小房間 —— */
+.scene[data-theme='emotion'] .scene__sky {
+  background: linear-gradient(180deg, #ffe3b5 0%, #fff4e4 42%, #ffd8c4 100%);
 }
 
-.scene[data-theme='space'] .scene__art {
-  background: linear-gradient(180deg, #1a2f4a, #3a6ea5 45%, #9ec9ef);
+.scene[data-theme='emotion'] .scene__layer--far {
+  top: 10%;
+  right: 12%;
+  width: 34%;
+  height: 30%;
+  border-radius: 14px;
+  background: linear-gradient(180deg, #9fd6ff, #dff1ff);
+  border: 4px solid #f0c9a0;
+  box-shadow: inset 0 0 0 8px rgba(255, 255, 255, 0.35);
 }
 
-.scene[data-theme='space'] .scene__sun {
-  background: #ffe9a8;
-  box-shadow: 0 0 0 10px rgba(255, 233, 168, 0.2);
+.scene[data-theme='emotion'] .scene__layer--far::before,
+.scene[data-theme='emotion'] .scene__layer--far::after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  bottom: -2px;
+  width: 14px;
+  background: #f4b184;
+  opacity: 0.85;
 }
 
-.scene[data-theme='lab'] .scene__art {
-  background: linear-gradient(180deg, #ffe8cc, #fff6ea 50%, #ffd7b0);
+.scene[data-theme='emotion'] .scene__layer--far::before {
+  left: -10px;
+  border-radius: 8px 0 0 8px;
 }
 
-.scene[data-theme='emotion'] .scene__art {
-  background: linear-gradient(180deg, #ffe9c8, #fff6e8 50%, #ffd7c2);
+.scene[data-theme='emotion'] .scene__layer--far::after {
+  right: -10px;
+  border-radius: 0 8px 8px 0;
 }
 
-.scene[data-theme='community'] .scene__art {
-  background: linear-gradient(180deg, #cfe4ff, #eef5ff 50%, #d9e8ff);
+.scene[data-theme='emotion'] .scene__layer--mid {
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 34%;
+  background: linear-gradient(180deg, #f7c9a8, #efb48c);
+}
+
+.scene[data-theme='emotion'] .scene__layer--near {
+  left: 12%;
+  bottom: 28%;
+  width: 88px;
+  height: 36px;
+  border-radius: 20px;
+  background: #ffb4c8;
+  opacity: 0.9;
+}
+
+.scene[data-theme='emotion'] .scene__deco--1 {
+  left: 18%;
+  bottom: 42%;
+  width: 36px;
+  height: 32px;
+  background: #ff8fab;
+  border-radius: 50% 50% 50% 50% / 45% 45% 55% 55%;
+  transform: rotate(-20deg);
+}
+
+.scene[data-theme='emotion'] .scene__deco--1::before,
+.scene[data-theme='emotion'] .scene__deco--1::after {
+  content: '';
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: inherit;
+}
+
+.scene[data-theme='emotion'] .scene__deco--1::before {
+  left: -10px;
+  top: -6px;
+}
+
+.scene[data-theme='emotion'] .scene__deco--1::after {
+  right: -8px;
+  top: -8px;
+}
+
+.scene[data-theme='emotion'] .scene__deco--2 {
+  right: 22%;
+  bottom: 36%;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: #ffe27a;
+  opacity: 0.85;
+}
+
+.scene[data-theme='emotion'] .scene__deco--3 {
+  left: 48%;
+  bottom: 34%;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #b8ecff;
+  opacity: 0.8;
+}
+
+/* —— 街道與公園 —— */
+.scene[data-theme='community'] .scene__sky {
+  background: linear-gradient(180deg, #9fd0ff 0%, #e8f3ff 55%, #d5e8ff 100%);
+}
+
+.scene[data-theme='community'] .scene__layer--far {
+  width: 52px;
+  height: 52px;
+  top: 10%;
+  right: 12%;
+  border-radius: 50%;
+  background: #ffe27a;
+  box-shadow: 0 0 0 10px rgba(255, 226, 122, 0.25);
+}
+
+.scene[data-theme='community'] .scene__layer--mid {
+  left: 8%;
+  bottom: 22%;
+  width: 70px;
+  height: 92px;
+  background: #7eb6ef;
+  border-radius: 8px 8px 0 0;
+  box-shadow:
+    86px 22px 0 -10px #ef9f7a,
+    148px 34px 0 -18px #8fd3a4;
+}
+
+.scene[data-theme='community'] .scene__layer--mid::before {
+  content: '';
+  position: absolute;
+  inset: 12px 12px auto;
+  height: 14px;
+  background:
+    linear-gradient(#fff6 0 0) 0 0 / 40% 100%,
+    linear-gradient(#fff6 0 0) 100% 0 / 40% 100%;
+  background-repeat: no-repeat;
+}
+
+.scene[data-theme='community'] .scene__layer--near {
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 22%;
+  background: linear-gradient(180deg, #9aa3ad, #7f8892);
+}
+
+.scene[data-theme='community'] .scene__layer--near::before {
+  content: '';
+  position: absolute;
+  left: 8%;
+  right: 8%;
+  top: 46%;
+  height: 4px;
+  background: repeating-linear-gradient(
+    90deg,
+    #fff8 0 18px,
+    transparent 18px 34px
+  );
+}
+
+.scene[data-theme='community'] .scene__deco--1 {
+  right: 14%;
+  bottom: 22%;
+  width: 0;
+  height: 0;
+  border-left: 26px solid transparent;
+  border-right: 26px solid transparent;
+  border-bottom: 56px solid #4caf66;
+}
+
+.scene[data-theme='community'] .scene__deco--1::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -68px;
+  width: 8px;
+  height: 18px;
+  transform: translateX(-50%);
+  background: #8b5a3c;
+}
+
+.scene[data-theme='community'] .scene__deco--2 {
+  left: 42%;
+  bottom: 24%;
+  width: 28px;
+  height: 36px;
+  background: #6b7785;
+  border-radius: 4px 4px 0 0;
+}
+
+.scene[data-theme='community'] .scene__deco--3 {
+  left: 18%;
+  top: 18%;
+  width: 64px;
+  height: 22px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.7);
+  box-shadow: 28px 16px 0 -4px rgba(255, 255, 255, 0.55);
+}
+
+@keyframes scene-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.06);
+  }
+}
+
+@keyframes scene-heart-pulse {
+  0%,
+  100% {
+    transform: rotate(-45deg) scale(1);
+  }
+  50% {
+    transform: rotate(-45deg) scale(1.06);
+  }
+}
+
+@keyframes scene-heart-beat {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  30% {
+    transform: scale(1.12);
+  }
+  45% {
+    transform: scale(0.96);
+  }
+  60% {
+    transform: scale(1.08);
+  }
 }
 
 .hotspot {

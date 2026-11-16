@@ -49,11 +49,13 @@ export function Scene() {
         data-theme={theme.id}
       >
         <div className="scene__art" aria-hidden>
-          <div className="scene__sun" />
-          <div className="scene__hill scene__hill--a" />
-          <div className="scene__hill scene__hill--b" />
-          <div className="scene__prop scene__prop--1" />
-          <div className="scene__prop scene__prop--2" />
+          <div className="scene__sky" />
+          <div className="scene__layer scene__layer--far" />
+          <div className="scene__layer scene__layer--mid" />
+          <div className="scene__layer scene__layer--near" />
+          <div className="scene__deco scene__deco--1" />
+          <div className="scene__deco scene__deco--2" />
+          <div className="scene__deco scene__deco--3" />
         </div>
 
         {theme.spots.map((spot) => {

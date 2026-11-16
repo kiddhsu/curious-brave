@@ -2,11 +2,11 @@ import type { ThemeWorld } from '../types'
 
 export const communityTheme: ThemeWorld = {
   id: 'community',
-  name: '社區世界',
-  tagline: '街上的東西都有道理',
+  name: '生活探險',
+  tagline: '馬路、公園，都有小道理',
   icon: 'community',
   accent: '#2f6fed',
-  sceneLabel: '街道與公園',
+  sceneLabel: '馬路與公園',
   order: 6,
   spots: [
     {
@@ -41,7 +41,7 @@ export const communityTheme: ThemeWorld = {
       icon: 'recycle',
       stickerLabel: '分類小達人',
       explanation:
-        '紙、瓶子、廚餘分開，有些能回收再利用。分類能減少浪費，社區也更乾淨。',
+        '紙、瓶子、廚餘分開，有些能回收再利用。分類能減少浪費，生活環境也更乾淨。',
       interact: {
         prompt: '空寶特瓶通常丟？',
         kind: 'pick',
@@ -86,7 +86,7 @@ export const communityTheme: ThemeWorld = {
       icon: 'queue',
       stickerLabel: '秩序小先鋒',
       explanation:
-        '排隊讓每個人輪流、公平，也比較不會推擠受傷。等待是社區生活的好習慣。',
+        '排隊讓每個人輪流、公平，也比較不會推擠受傷。等待是日常生活的好習慣。',
       interact: {
         prompt: '買東西人很多時，好做法是？',
         kind: 'pick',
@@ -122,15 +122,15 @@ export const communityTheme: ThemeWorld = {
     },
     {
       id: 'help-neighbor',
-      title: '鄰居互助',
-      question: '為什麼社區裡要互相幫忙？',
+      title: '互相幫忙',
+      question: '為什麼日常生活裡要互相幫忙？',
       stage: 2,
       x: 80,
       y: 54,
       icon: 'help',
       stickerLabel: '互助小星星',
       explanation:
-        '每個人都可能需要幫忙。互相照顧，社區更安全、更溫暖，自己有困難時也較容易被協助。',
+        '每個人都可能需要幫忙。互相照顧，大家更安全、更溫暖，自己有困難時也較容易被協助。',
       interact: {
         prompt: '看到同學東西掉了，可以？',
         kind: 'pick',
@@ -219,7 +219,7 @@ export const communityTheme: ThemeWorld = {
         id: 'stop',
         label: '先停看聽，確認安全再走，並提醒朋友。',
         tone: 'best',
-        feedback: '你保護自己，也關心朋友。這就是社區裡的小勇者！',
+        feedback: '你保護自己，也關心朋友。這就是生活裡的小勇者！',
       },
       {
         id: 'ask',
