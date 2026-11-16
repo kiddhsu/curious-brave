@@ -1,0 +1,237 @@
+import type { ThemeWorld } from '../types'
+
+export const labTheme: ThemeWorld = {
+  id: 'lab',
+  name: '動手實驗',
+  tagline: '做做看，科學就出現',
+  icon: 'lab',
+  accent: '#e67e22',
+  sceneLabel: '小小實驗室',
+  order: 4,
+  spots: [
+    {
+      id: 'salt-water',
+      title: '鹽巴消失',
+      question: '鹽放進水裡為什麼看不見了？',
+      stage: 1,
+      x: 18,
+      y: 28,
+      icon: 'salt',
+      stickerLabel: '溶解觀察員',
+      explanation:
+        '鹽沒有消失，而是拆成很小的粒子分散在水裡，變成鹽水。嚐起來還是鹹的。',
+      interact: {
+        prompt: '鹽「消失」其實是？',
+        kind: 'pick',
+        hint: '分散在水裡。',
+        options: [
+          { id: 'dissolve', label: '溶解分散在水中', correct: true },
+          { id: 'gone', label: '蒸發到外太空' },
+          { id: 'hide', label: '躲到杯底睡覺' },
+        ],
+      },
+    },
+    {
+      id: 'ice-float',
+      title: '冰塊上浮',
+      question: '冰塊為什麼會浮在水上？',
+      stage: 1,
+      x: 50,
+      y: 24,
+      icon: 'ice',
+      stickerLabel: '浮力小達人',
+      explanation:
+        '冰的密度比液態水小，同樣重量占的空間比較大，所以會浮起來。',
+      interact: {
+        prompt: '冰會浮，是因為？',
+        kind: 'pick',
+        hint: '密度比較小。',
+        options: [
+          { id: 'light', label: '冰的密度比液態水小', correct: true },
+          { id: 'mag', label: '冰塊有磁鐵' },
+          { id: 'balloon', label: '裡面裝滿氦氣' },
+        ],
+      },
+    },
+    {
+      id: 'color-mix',
+      title: '顏色混合',
+      question: '黃加藍為什麼常會變綠？',
+      stage: 1,
+      x: 82,
+      y: 30,
+      icon: 'palette',
+      stickerLabel: '調色小畫家',
+      explanation:
+        '顏料混合時，顏色會疊在一起改變我們看見的結果。黃與藍常見會調出綠色。',
+      interact: {
+        prompt: '黃＋藍顏料，常常得到？',
+        kind: 'pick',
+        hint: '想想草地的顏色。',
+        options: [
+          { id: 'green', label: '綠色', correct: true },
+          { id: 'pink', label: '粉紅色' },
+          { id: 'black-only', label: '一定變成黑色' },
+        ],
+      },
+    },
+    {
+      id: 'soda-bubble',
+      title: '泡泡實驗',
+      question: '小蘇打加醋為什麼會冒泡？',
+      stage: 2,
+      x: 20,
+      y: 52,
+      icon: 'bubble',
+      stickerLabel: '氣泡科學家',
+      explanation:
+        '兩者反應會產生二氧化碳氣體，氣體跑出來就看到泡泡。要大人陪同做實驗。',
+      interact: {
+        prompt: '冒泡主要產生了什麼？',
+        kind: 'pick',
+        hint: '一種氣體。',
+        options: [
+          { id: 'co2', label: '二氧化碳氣體', correct: true },
+          { id: 'candy', label: '隱形糖果雨' },
+          { id: 'soap', label: '自動肥皂' },
+        ],
+      },
+    },
+    {
+      id: 'magnet',
+      title: '磁鐵吸引',
+      question: '磁鐵會吸住什麼東西？',
+      stage: 2,
+      x: 50,
+      y: 48,
+      icon: 'magnet',
+      stickerLabel: '磁力探險家',
+      explanation:
+        '常見磁鐵容易吸住含鐵的物品，例如鐵釘、迴紋針。木頭和塑膠通常吸不住。',
+      interact: {
+        prompt: '哪一樣最可能被吸住？',
+        kind: 'pick',
+        hint: '鐵製品。',
+        options: [
+          { id: 'clip', label: '鐵製迴紋針', correct: true },
+          { id: 'wood', label: '小木棒' },
+          { id: 'eraser', label: '橡皮擦' },
+        ],
+      },
+    },
+    {
+      id: 'sink-float',
+      title: '沉與浮',
+      question: '為什麼有的東西沉、有的浮？',
+      stage: 2,
+      x: 80,
+      y: 54,
+      icon: 'float',
+      stickerLabel: '沉浮觀察員',
+      explanation:
+        '東西的密度與形狀會影響它在水中沉或浮。空心、輕盈的比較容易浮。',
+      interact: {
+        prompt: '比較容易浮的是？',
+        kind: 'pick',
+        hint: '輕、空心。',
+        options: [
+          { id: 'ball', label: '充氣小皮球', correct: true },
+          { id: 'rock', label: '實心大石頭' },
+          { id: 'key', label: '厚重鐵鑰匙' },
+        ],
+      },
+    },
+    {
+      id: 'shadow',
+      title: '影子變變',
+      question: '影子為什麼有時長、有時短？',
+      stage: 3,
+      x: 22,
+      y: 74,
+      icon: 'shadow',
+      stickerLabel: '影子測量員',
+      explanation:
+        '光被擋住就有影子。光源角度改變，影子長短也會變：太陽低影子長，太陽高影子短。',
+      interact: {
+        prompt: '影子變長短的過程？',
+        kind: 'order',
+        hint: '光、擋住、角度。',
+        options: [
+          { id: 'light', label: '有光線照射' },
+          { id: 'block', label: '身體擋住光線' },
+          { id: 'angle', label: '角度改變，長短改變' },
+        ],
+        correctOrder: ['light', 'block', 'angle'],
+      },
+    },
+    {
+      id: 'static',
+      title: '靜電挑逗',
+      question: '氣球摩擦頭髮為什麼會豎起來？',
+      stage: 3,
+      x: 50,
+      y: 70,
+      icon: 'static',
+      stickerLabel: '靜電小魔法',
+      explanation:
+        '摩擦讓電荷搬家，靜電互相推拉，頭髮就一根根翹起來。乾燥天氣更明顯。',
+      interact: {
+        prompt: '頭髮豎起主要跟什麼有關？',
+        kind: 'pick',
+        hint: '摩擦產生的電。',
+        options: [
+          { id: 'charge', label: '摩擦造成的靜電', correct: true },
+          { id: 'wind', label: '房間突然刮颱風' },
+          { id: 'gel', label: '隱形髮膠噴霧' },
+        ],
+      },
+    },
+    {
+      id: 'mirror',
+      title: '鏡子反射',
+      question: '鏡子為什麼能照出自己？',
+      stage: 3,
+      x: 78,
+      y: 76,
+      icon: 'mirror',
+      stickerLabel: '反射小偵探',
+      explanation:
+        '光滑的鏡子把光線幾乎照原路彈回來，眼睛接收到反射光，就看到自己的樣子。',
+      interact: {
+        prompt: '鏡子能照人，是因為？',
+        kind: 'pick',
+        hint: '光被彈回來。',
+        options: [
+          { id: 'reflect', label: '光滑表面反射光線', correct: true },
+          { id: 'draw', label: '鏡子會自己畫畫' },
+          { id: 'camera', label: '裡面藏攝影機' },
+        ],
+      },
+    },
+  ],
+  courage: {
+    id: 'lab-courage',
+    title: '勇氣挑戰：安全做實驗',
+    situation: '想做泡泡實驗，桌上有醋和小蘇打。你會怎麼做？',
+    options: [
+      {
+        id: 'adult',
+        label: '先找大人一起，講好步驟再做。',
+        tone: 'best',
+        feedback: '找大人陪同最安全，也是真正的科學態度！',
+      },
+      {
+        id: 'ask',
+        label: '先問清楚能不能做、要注意什麼。',
+        tone: 'ok',
+        feedback: '先問清楚很好，記得還是要有大人在。',
+      },
+      {
+        id: 'alone',
+        label: '自己偷偷混一混，愈多愈好。',
+        tone: 'retry',
+        feedback: '實驗要安全第一。再選一次有大人陪伴的做法。',
+      },
+    ],
+  },
+}

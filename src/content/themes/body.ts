@@ -1,0 +1,237 @@
+import type { ThemeWorld } from '../types'
+
+export const bodyTheme: ThemeWorld = {
+  id: 'body',
+  name: '人體奧秘',
+  tagline: '身體裡藏著好多機關',
+  icon: 'body',
+  accent: '#ff6b4a',
+  sceneLabel: '身體探險站',
+  order: 1,
+  spots: [
+    {
+      id: 'bones',
+      title: '硬硬骨架',
+      question: '為什麼人需要骨頭？',
+      stage: 1,
+      x: 18,
+      y: 28,
+      icon: 'bone',
+      stickerLabel: '骨架小工程師',
+      explanation:
+        '骨頭像身體的支架，讓我們能站、走、跳，也保護腦袋和心臟這些重要部位。',
+      interact: {
+        prompt: '骨頭最重要的工作是？',
+        kind: 'pick',
+        hint: '想想支架跟保護。',
+        options: [
+          { id: 'frame', label: '支撐身體、保護器官', correct: true },
+          { id: 'sing', label: '專門用來唱歌' },
+          { id: 'color', label: '決定頭髮顏色' },
+        ],
+      },
+    },
+    {
+      id: 'blink',
+      title: '眨眼一下',
+      question: '為什麼眼睛會一直眨眼？',
+      stage: 1,
+      x: 50,
+      y: 24,
+      icon: 'eye',
+      stickerLabel: '眨眼清洗員',
+      explanation:
+        '眨眼像自動雨刷，把眼淚抹勻、帶走灰塵，讓眼睛保持濕潤與清潔。',
+      interact: {
+        prompt: '眨眼比較像在做什麼？',
+        kind: 'pick',
+        hint: '清潔、保濕。',
+        options: [
+          { id: 'clean', label: '幫眼睛清潔保濕', correct: true },
+          { id: 'sleep', label: '強迫立刻睡著' },
+          { id: 'photo', label: '拍照存檔' },
+        ],
+      },
+    },
+    {
+      id: 'heart-pump',
+      title: '心臟幫浦',
+      question: '為什麼心臟會一直跳？',
+      stage: 1,
+      x: 82,
+      y: 30,
+      icon: 'heart',
+      stickerLabel: '咚咚觀察員',
+      explanation:
+        '心臟像小幫浦，把帶氧氣的血液送到全身。跑步時跳更快，幫忙供應更多力氣。',
+      interact: {
+        prompt: '心臟主要在做什麼？',
+        kind: 'pick',
+        hint: '送血液。',
+        options: [
+          { id: 'pump', label: '把血液送到全身', correct: true },
+          { id: 'think', label: '專門負責想功課' },
+          { id: 'smell', label: '幫忙聞味道' },
+        ],
+      },
+    },
+    {
+      id: 'tummy',
+      title: '肚子咕嚕',
+      question: '為什麼肚子有時會咕嚕叫？',
+      stage: 2,
+      x: 20,
+      y: 52,
+      icon: 'tummy',
+      stickerLabel: '咕嚕偵探',
+      explanation:
+        '腸子蠕動推動食物與氣體，空氣移動就發出聲音。餓的時候或吞進空氣時特別明顯。',
+      interact: {
+        prompt: '肚子咕嚕多半是因為？',
+        kind: 'pick',
+        hint: '腸子在工作。',
+        options: [
+          { id: 'move', label: '腸子推動食物和氣體', correct: true },
+          { id: 'radio', label: '肚子裡藏收音機' },
+          { id: 'angry', label: '骨頭在生氣' },
+        ],
+      },
+    },
+    {
+      id: 'sweat',
+      title: '汗水出場',
+      question: '運動後為什麼會流汗？',
+      stage: 2,
+      x: 50,
+      y: 48,
+      icon: 'sweat',
+      stickerLabel: '冷卻小幫手',
+      explanation:
+        '身體變熱時，汗水蒸發帶走熱，讓體溫不要一直往上飆。流汗是天然冷卻方式。',
+      interact: {
+        prompt: '流汗降溫的步驟？',
+        kind: 'order',
+        hint: '先變熱，再出汗，再降溫。',
+        options: [
+          { id: 'hot', label: '運動讓身體變熱' },
+          { id: 'out', label: '皮膚出汗' },
+          { id: 'cool', label: '蒸發帶走熱氣' },
+        ],
+        correctOrder: ['hot', 'out', 'cool'],
+      },
+    },
+    {
+      id: 'taste',
+      title: '舌頭地圖',
+      question: '為什麼舌頭能分辨味道？',
+      stage: 2,
+      x: 80,
+      y: 54,
+      icon: 'taste',
+      stickerLabel: '味道探險家',
+      explanation:
+        '舌頭上有味蕾，能察覺甜、酸、苦、鹹、鮮等味道，再把訊息傳給大腦。鼻子也會幫忙聞香氣。',
+      interact: {
+        prompt: '味道主要靠哪裡察覺？',
+        kind: 'pick',
+        hint: '想想舌頭。',
+        options: [
+          { id: 'tongue', label: '舌頭上的味蕾', correct: true },
+          { id: 'elbow', label: '手肘皮膚' },
+          { id: 'hair', label: '頭髮尖端' },
+        ],
+      },
+    },
+    {
+      id: 'fingerprint',
+      title: '指紋密碼',
+      question: '為什麼每個人指紋都不一樣？',
+      stage: 3,
+      x: 22,
+      y: 74,
+      icon: 'fingerprint',
+      stickerLabel: '指紋收藏家',
+      explanation:
+        '指紋在媽媽肚子裡就慢慢形成，幾乎沒有兩人完全一樣，也能增加抓握摩擦力。',
+      interact: {
+        prompt: '指紋特別的地方是？',
+        kind: 'pick',
+        hint: '每人都不太一樣。',
+        options: [
+          { id: 'unique', label: '幾乎人人不同', correct: true },
+          { id: 'same', label: '全班都一模一樣' },
+          { id: 'change', label: '每天早上會換新的' },
+        ],
+      },
+    },
+    {
+      id: 'sleep-grow',
+      title: '睡覺成長',
+      question: '為什麼小朋友要睡飽？',
+      stage: 3,
+      x: 50,
+      y: 70,
+      icon: 'sleep',
+      stickerLabel: '成長充電站',
+      explanation:
+        '睡覺時身體休息修復，也會幫助長高；大腦整理白天學的東西。睡飽了精神更好。',
+      interact: {
+        prompt: '睡飽後比較容易怎樣？',
+        kind: 'pick',
+        hint: '精神與學習。',
+        options: [
+          { id: 'focus', label: '比較有精神、好專心', correct: true },
+          { id: 'fly', label: '立刻會飛' },
+          { id: 'no-eat', label: '永遠不用吃飯' },
+        ],
+      },
+    },
+    {
+      id: 'muscle',
+      title: '肌肉力量',
+      question: '為什麼多活動會讓力氣變大？',
+      stage: 3,
+      x: 78,
+      y: 76,
+      icon: 'muscle',
+      stickerLabel: '力氣練習生',
+      explanation:
+        '肌肉像會成長的橡皮筋，常被使用會變得更有力。跑步、遊戲、幫忙提東西都是在練習。',
+      interact: {
+        prompt: '想讓力氣變大，可以？',
+        kind: 'pick',
+        hint: '多用身體活動。',
+        options: [
+          { id: 'move', label: '常活動、練習身體', correct: true },
+          { id: 'sit', label: '整天完全不動' },
+          { id: 'shout', label: '只靠大喊大叫' },
+        ],
+      },
+    },
+  ],
+  courage: {
+    id: 'body-courage',
+    title: '勇氣挑戰：不舒服要說',
+    situation: '頭有點痛，可是不想打擾上課。你會怎麼做？',
+    options: [
+      {
+        id: 'tell',
+        label: '跟老師或家人說：「我有點不舒服。」',
+        tone: 'best',
+        feedback: '說出來才能被照顧。認識身體，也勇敢照顧自己！',
+      },
+      {
+        id: 'rest',
+        label: '先安靜休息，等一下再告訴大人。',
+        tone: 'ok',
+        feedback: '休息可以，但記得一定要說出來。',
+      },
+      {
+        id: 'hide',
+        label: '假裝沒事，什麼都不說。',
+        tone: 'retry',
+        feedback: '硬撐可能更不舒服。再選一次更勇敢的做法。',
+      },
+    ],
+  },
+}

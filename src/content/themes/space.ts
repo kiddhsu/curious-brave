@@ -1,0 +1,237 @@
+import type { ThemeWorld } from '../types'
+
+export const spaceTheme: ThemeWorld = {
+  id: 'space',
+  name: '太空宇宙',
+  tagline: '抬頭看看大大宇宙',
+  icon: 'space',
+  accent: '#3a6ea5',
+  sceneLabel: '星空觀測台',
+  order: 3,
+  spots: [
+    {
+      id: 'day-night',
+      title: '白天黑夜',
+      question: '為什麼會有白天和黑夜？',
+      stage: 1,
+      x: 18,
+      y: 28,
+      icon: 'daynight',
+      stickerLabel: '日夜觀察員',
+      explanation:
+        '地球自轉：面向太陽是白天，背對太陽是夜晚。轉一圈大約就是一天。',
+      interact: {
+        prompt: '白天黑夜主要是因為？',
+        kind: 'pick',
+        hint: '地球在轉。',
+        options: [
+          { id: 'spin', label: '地球自轉，有的面向太陽', correct: true },
+          { id: 'switch', label: '太陽每天關機重開' },
+          { id: 'curtain', label: '天空被拉上窗簾' },
+        ],
+      },
+    },
+    {
+      id: 'moon-shape',
+      title: '月亮形狀',
+      question: '月亮為什麼有時是彎彎的？',
+      stage: 1,
+      x: 50,
+      y: 24,
+      icon: 'moon',
+      stickerLabel: '月相小畫家',
+      explanation:
+        '月亮反射太陽光。我們看見被照亮的部分會改變，所以有時圓、有時彎。',
+      interact: {
+        prompt: '我們看見的月光來自？',
+        kind: 'pick',
+        hint: '反射誰的光？',
+        options: [
+          { id: 'sun', label: '太陽光照在月球上再反射', correct: true },
+          { id: 'bulb', label: '月亮裡面的燈泡' },
+          { id: 'firefly', label: '好多螢火蟲' },
+        ],
+      },
+    },
+    {
+      id: 'sun-warm',
+      title: '太陽暖暖',
+      question: '為什麼太陽對地球很重要？',
+      stage: 1,
+      x: 82,
+      y: 30,
+      icon: 'sun',
+      stickerLabel: '陽光守護者',
+      explanation:
+        '太陽帶來光和熱，讓植物做養分、讓白天明亮，也影響天氣。沒有太陽，地球會又冷又暗。',
+      interact: {
+        prompt: '太陽帶給地球？',
+        kind: 'pick',
+        hint: '光與熱。',
+        options: [
+          { id: 'light', label: '光和熱', correct: true },
+          { id: 'snow-only', label: '只有冰塊' },
+          { id: 'wifi', label: '免費網路' },
+        ],
+      },
+    },
+    {
+      id: 'stars-twinkle',
+      title: '星星眨眼',
+      question: '星星為什麼看起來會閃爍？',
+      stage: 2,
+      x: 20,
+      y: 52,
+      icon: 'star',
+      stickerLabel: '閃爍觀星者',
+      explanation:
+        '星光穿過大氣層時被空氣攪動，看起來就像眨眼。到太空中閃爍會少很多。',
+      interact: {
+        prompt: '星星閃爍多半因為？',
+        kind: 'pick',
+        hint: '跟大氣有關。',
+        options: [
+          { id: 'air', label: '星光被大氣層攪動', correct: true },
+          { id: 'wink', label: '星星在跟人打招呼' },
+          { id: 'broken', label: '星星燈泡快沒電' },
+        ],
+      },
+    },
+    {
+      id: 'shooting-star',
+      title: '流星一刻',
+      question: '流星是星星掉下來嗎？',
+      stage: 2,
+      x: 50,
+      y: 48,
+      icon: 'meteor',
+      stickerLabel: '流星真相派',
+      explanation:
+        '流星多半是小岩石高速衝進大氣層摩擦發光，不是整顆恆星掉下來。',
+      interact: {
+        prompt: '流星的過程？',
+        kind: 'order',
+        hint: '進入、發光、碎片。',
+        options: [
+          { id: 'enter', label: '小石頭衝進大氣層' },
+          { id: 'glow', label: '摩擦發出亮光' },
+          { id: 'fade', label: '大多燒成碎片' },
+        ],
+        correctOrder: ['enter', 'glow', 'fade'],
+      },
+    },
+    {
+      id: 'earth-spin',
+      title: '地球軌道',
+      question: '為什麼一年有春夏秋冬？',
+      stage: 2,
+      x: 80,
+      y: 54,
+      icon: 'earth',
+      stickerLabel: '四季小導遊',
+      explanation:
+        '地球繞太陽公轉，而且是斜斜的。有時北半球比較朝向太陽（較熱），有時較背對（較冷），就有四季變化。',
+      interact: {
+        prompt: '四季變化跟什麼有關？',
+        kind: 'pick',
+        hint: '地球斜斜繞太陽。',
+        options: [
+          { id: 'tilt', label: '地球傾斜並繞太陽轉', correct: true },
+          { id: 'fan', label: '太陽用電風扇吹' },
+          { id: 'paint', label: '天空被重新上色' },
+        ],
+      },
+    },
+    {
+      id: 'moon-live',
+      title: '月球生活',
+      question: '人為什麼不能直接住在月球上？',
+      stage: 3,
+      x: 22,
+      y: 74,
+      icon: 'helmet',
+      stickerLabel: '太空安全官',
+      explanation:
+        '月球幾乎沒有可呼吸空氣，溫度變化很大，需要特殊裝備與基地才能待久。',
+      interact: {
+        prompt: '月球不適合直接居住，因為？',
+        kind: 'pick',
+        hint: '空氣與環境。',
+        options: [
+          { id: 'air', label: '缺少可呼吸空氣，環境嚴苛', correct: true },
+          { id: 'wifi', label: '沒有免費 Wi‑Fi' },
+          { id: 'park', label: '停車場不夠' },
+        ],
+      },
+    },
+    {
+      id: 'space-dark',
+      title: '宇宙黑黑',
+      question: '太空為什麼看起來黑黑的？',
+      stage: 3,
+      x: 50,
+      y: 70,
+      icon: 'space',
+      stickerLabel: '黑暗宇宙家',
+      explanation:
+        '太空幾乎沒有空氣散射陽光，不像地球白天會把天空照亮，所以大多看起來很暗。',
+      interact: {
+        prompt: '太空看起來暗，差在？',
+        kind: 'pick',
+        hint: '空氣會散射光。',
+        options: [
+          { id: 'scatter', label: '幾乎沒有空氣散射陽光', correct: true },
+          { id: 'paint', label: '有人把太空塗黑' },
+          { id: 'sleep', label: '宇宙在睡覺關燈' },
+        ],
+      },
+    },
+    {
+      id: 'rocket',
+      title: '火箭起飛',
+      question: '火箭為什麼能飛出地球？',
+      stage: 3,
+      x: 78,
+      y: 76,
+      icon: 'rocket',
+      stickerLabel: '發射小專家',
+      explanation:
+        '火箭向下噴出強大氣體，產生向上的推力。推力夠大，就能克服重力往上飛。',
+      interact: {
+        prompt: '火箭往上飛，是因為？',
+        kind: 'pick',
+        hint: '向下噴、向上推。',
+        options: [
+          { id: 'thrust', label: '向下噴氣產生推力', correct: true },
+          { id: 'balloon', label: '綁很多生日氣球' },
+          { id: 'jump', label: '太空人用力跳' },
+        ],
+      },
+    },
+  ],
+  courage: {
+    id: 'space-courage',
+    title: '勇氣挑戰：勇敢提問',
+    situation: '你對星星很好奇，但怕問題很奇怪被笑。你會怎麼做？',
+    options: [
+      {
+        id: 'ask',
+        label: '還是問出來：「為什麼星星會閃？」',
+        tone: 'best',
+        feedback: '好奇提問就是小勇者！問題沒有笨的。',
+      },
+      {
+        id: 'book',
+        label: '先自己找圖畫書，再跟大人討論。',
+        tone: 'ok',
+        feedback: '自己找資料很棒，有疑問仍可以問人。',
+      },
+      {
+        id: 'silent',
+        label: '什麼都不問，把好奇心吞下去。',
+        tone: 'retry',
+        feedback: '好奇心值得被聽見。再選一次勇敢一點的做法。',
+      },
+    ],
+  },
+}

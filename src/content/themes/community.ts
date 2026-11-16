@@ -1,0 +1,238 @@
+import type { ThemeWorld } from '../types'
+
+export const communityTheme: ThemeWorld = {
+  id: 'community',
+  name: '社區世界',
+  tagline: '街上的東西都有道理',
+  icon: 'community',
+  accent: '#2f6fed',
+  sceneLabel: '街道與公園',
+  order: 6,
+  spots: [
+    {
+      id: 'traffic-light',
+      title: '紅綠燈',
+      question: '馬路為什麼需要紅綠燈？',
+      stage: 1,
+      x: 18,
+      y: 28,
+      icon: 'light',
+      stickerLabel: '停看聽達人',
+      explanation:
+        '紅綠燈幫忙排順序：紅燈停、綠燈行，車與行人輪流走，比較安全。',
+      interact: {
+        prompt: '紅燈亮時應該？',
+        kind: 'pick',
+        hint: '先停住。',
+        options: [
+          { id: 'stop', label: '停在安全的地方等候', correct: true },
+          { id: 'run', label: '快跑衝過去' },
+          { id: 'close', label: '閉眼睛假裝沒看到' },
+        ],
+      },
+    },
+    {
+      id: 'sort-trash',
+      title: '垃圾分類',
+      question: '為什麼要把垃圾分開丟？',
+      stage: 1,
+      x: 50,
+      y: 24,
+      icon: 'recycle',
+      stickerLabel: '分類小達人',
+      explanation:
+        '紙、瓶子、廚餘分開，有些能回收再利用。分類能減少浪費，社區也更乾淨。',
+      interact: {
+        prompt: '空寶特瓶通常丟？',
+        kind: 'pick',
+        hint: '可以回收。',
+        options: [
+          { id: 'recycle', label: '資源回收', correct: true },
+          { id: 'food', label: '跟剩菜丟在一起' },
+          { id: 'river', label: '丟到小河裡' },
+        ],
+      },
+    },
+    {
+      id: 'helmet-safe',
+      title: '安全帽',
+      question: '騎車為什麼要戴安全帽？',
+      stage: 1,
+      x: 82,
+      y: 30,
+      icon: 'helmet',
+      stickerLabel: '護腦小勇士',
+      explanation:
+        '安全帽像腦袋的保護殼，跌倒時減少頭部受傷。要戴穩、扣好才有用。',
+      interact: {
+        prompt: '出門騎車的正確順序？',
+        kind: 'order',
+        hint: '戴、扣、出發。',
+        options: [
+          { id: 'wear', label: '戴上安全帽' },
+          { id: 'buckle', label: '把帶子扣好' },
+          { id: 'go', label: '確認穩了再出發' },
+        ],
+        correctOrder: ['wear', 'buckle', 'go'],
+      },
+    },
+    {
+      id: 'queue',
+      title: '排隊秩序',
+      question: '為什麼要排隊？',
+      stage: 2,
+      x: 20,
+      y: 52,
+      icon: 'queue',
+      stickerLabel: '秩序小先鋒',
+      explanation:
+        '排隊讓每個人輪流、公平，也比較不會推擠受傷。等待是社區生活的好習慣。',
+      interact: {
+        prompt: '買東西人很多時，好做法是？',
+        kind: 'pick',
+        hint: '輪流。',
+        options: [
+          { id: 'line', label: '乖乖排隊等候', correct: true },
+          { id: 'cut', label: '插隊比較快' },
+          { id: 'push', label: '用力往前擠' },
+        ],
+      },
+    },
+    {
+      id: 'library',
+      title: '圖書館小聲',
+      question: '圖書館為什麼要保持安靜？',
+      stage: 2,
+      x: 50,
+      y: 48,
+      icon: 'book',
+      stickerLabel: '安靜小讀者',
+      explanation:
+        '很多人在閱讀與思考，小聲能互相尊重，讓大家都能專心。需要說話可以到外面或輕聲談。',
+      interact: {
+        prompt: '在圖書館比較合適的是？',
+        kind: 'pick',
+        hint: '尊重他人。',
+        options: [
+          { id: 'quiet', label: '輕聲走路、安靜閱讀', correct: true },
+          { id: 'shout', label: '大聲玩遊戲' },
+          { id: 'run', label: '在通道奔跑追逐' },
+        ],
+      },
+    },
+    {
+      id: 'help-neighbor',
+      title: '鄰居互助',
+      question: '為什麼社區裡要互相幫忙？',
+      stage: 2,
+      x: 80,
+      y: 54,
+      icon: 'help',
+      stickerLabel: '互助小星星',
+      explanation:
+        '每個人都可能需要幫忙。互相照顧，社區更安全、更溫暖，自己有困難時也較容易被協助。',
+      interact: {
+        prompt: '看到同學東西掉了，可以？',
+        kind: 'pick',
+        hint: '伸出援手。',
+        options: [
+          { id: 'help', label: '提醒或幫忙撿起來', correct: true },
+          { id: 'laugh', label: '嘲笑他很笨' },
+          { id: 'ignore', label: '假裝沒看見並走開' },
+        ],
+      },
+    },
+    {
+      id: 'crosswalk',
+      title: '斑馬線',
+      question: '過馬路為什麼走斑馬線？',
+      stage: 3,
+      x: 22,
+      y: 74,
+      icon: 'crosswalk',
+      stickerLabel: '安全過街員',
+      explanation:
+        '斑馬線是給行人過街的地方，駕駛比較容易注意到。加上停看聽，更安全。',
+      interact: {
+        prompt: '過馬路的好習慣是？',
+        kind: 'order',
+        hint: '停、看、走。',
+        options: [
+          { id: 'stop', label: '先停在安全處' },
+          { id: 'look', label: '左右看清楚' },
+          { id: 'walk', label: '確認安全再走' },
+        ],
+        correctOrder: ['stop', 'look', 'walk'],
+      },
+    },
+    {
+      id: 'park-rule',
+      title: '公園規則',
+      question: '公園遊樂設施為什麼要輪流玩？',
+      stage: 3,
+      x: 50,
+      y: 70,
+      icon: 'park',
+      stickerLabel: '遊玩小紳士',
+      explanation:
+        '設施有限，輪流玩才公平，也比較不會推擠受傷。玩得開心也要顧到別人。',
+      interact: {
+        prompt: '溜滑梯很多人時，好做法是？',
+        kind: 'pick',
+        hint: '輪流。',
+        options: [
+          { id: 'turn', label: '排隊輪流，不推人', correct: true },
+          { id: 'block', label: '一直占著不讓人' },
+          { id: 'push', label: '把別人推下去' },
+        ],
+      },
+    },
+    {
+      id: 'thank-worker',
+      title: '謝謝付出',
+      question: '為什麼要對清潔人員說謝謝？',
+      stage: 3,
+      x: 78,
+      y: 76,
+      icon: 'thanks',
+      stickerLabel: '感謝小達人',
+      explanation:
+        '他們幫忙保持環境乾淨，我們的生活更舒服。一句謝謝，是看見別人的付出。',
+      interact: {
+        prompt: '看到清潔工作時，可以？',
+        kind: 'pick',
+        hint: '表達感謝。',
+        options: [
+          { id: 'thanks', label: '說謝謝，並不亂丟垃圾', correct: true },
+          { id: 'litter', label: '故意丟更多垃圾' },
+          { id: 'rude', label: '嫌對方很吵' },
+        ],
+      },
+    },
+  ],
+  courage: {
+    id: 'community-courage',
+    title: '勇氣挑戰：過馬路停看聽',
+    situation: '綠燈亮了，可是你還沒看左右。朋友已經往前走。你會怎麼做？',
+    options: [
+      {
+        id: 'stop',
+        label: '先停看聽，確認安全再走，並提醒朋友。',
+        tone: 'best',
+        feedback: '你保護自己，也關心朋友。這就是社區裡的小勇者！',
+      },
+      {
+        id: 'ask',
+        label: '拉住大人的手，一起過馬路。',
+        tone: 'ok',
+        feedback: '找大人一起很聰明。記得還是要停看聽。',
+      },
+      {
+        id: 'run',
+        label: '跟著朋友快跑，不等。',
+        tone: 'retry',
+        feedback: '快跑容易發生危險。再選一次：安全比趕時間重要。',
+      },
+    ],
+  },
+}

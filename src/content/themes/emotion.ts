@@ -1,0 +1,238 @@
+import type { ThemeWorld } from '../types'
+
+export const emotionTheme: ThemeWorld = {
+  id: 'emotion',
+  name: '情緒世界',
+  tagline: '感覺來了，我也能懂它',
+  icon: 'emotion',
+  accent: '#f5a524',
+  sceneLabel: '心情小房間',
+  order: 5,
+  spots: [
+    {
+      id: 'want-cry',
+      title: '想哭的時候',
+      question: '為什麼有時候會想哭？',
+      stage: 1,
+      x: 18,
+      y: 28,
+      icon: 'tear',
+      stickerLabel: '眼淚翻譯官',
+      explanation:
+        '哭不是壞事。難過、太累、很感動時，眼淚幫忙把感覺放出來，之後常會好一點。',
+      interact: {
+        prompt: '想哭時，哪一句對自己最溫柔？',
+        kind: 'pick',
+        hint: '允許自己有感覺。',
+        options: [
+          { id: 'ok', label: '「哭一下沒關係，我在。」', correct: true },
+          { id: 'bad', label: '「哭就是丟臉。」' },
+          { id: 'stop', label: '「不准有感覺。」' },
+        ],
+      },
+    },
+    {
+      id: 'angry-hot',
+      title: '生氣熱熱的',
+      question: '生氣時身體為什麼熱熱的？',
+      stage: 1,
+      x: 50,
+      y: 24,
+      icon: 'fire',
+      stickerLabel: '怒火觀測站',
+      explanation:
+        '生氣時身體準備保護自己，心跳變快、臉可能紅，就覺得熱。先深呼吸再說話更好。',
+      interact: {
+        prompt: '生氣熱熱時，先做哪一步比較好？',
+        kind: 'pick',
+        hint: '先冷靜。',
+        options: [
+          { id: 'breathe', label: '停一下，慢慢吸吐氣', correct: true },
+          { id: 'hit', label: '立刻打人或砸東西' },
+          { id: 'yell', label: '用最大聲音罵人' },
+        ],
+      },
+    },
+    {
+      id: 'nervous-heart',
+      title: '緊張心跳',
+      question: '為什麼緊張會心跳很快？',
+      stage: 1,
+      x: 82,
+      y: 30,
+      icon: 'heart',
+      stickerLabel: '勇敢心跳',
+      explanation:
+        '緊張時身體以為要面對挑戰，心臟跳快是在送力量。跟自己說「我可以試試看」會更穩。',
+      interact: {
+        prompt: '上台前可以對自己說？',
+        kind: 'order',
+        hint: '承認、允許、嘗試。',
+        options: [
+          { id: 'notice', label: '「我現在有點緊張。」' },
+          { id: 'ok', label: '「緊張沒關係。」' },
+          { id: 'try', label: '「我可以試一次。」' },
+        ],
+        correctOrder: ['notice', 'ok', 'try'],
+      },
+    },
+    {
+      id: 'happy-share',
+      title: '開心分享',
+      question: '為什麼開心時想告訴別人？',
+      stage: 2,
+      x: 20,
+      y: 52,
+      icon: 'smile',
+      stickerLabel: '分享小太陽',
+      explanation:
+        '開心跟別人說，快樂常常會變大，友誼也更靠近。分享好消息是很自然的事。',
+      interact: {
+        prompt: '有好消息時，溫柔做法是？',
+        kind: 'pick',
+        hint: '可以分享。',
+        options: [
+          { id: 'share', label: '跟信任的人分享開心', correct: true },
+          { id: 'hide', label: '永遠不准說出口' },
+          { id: 'boast-hurt', label: '用開心去嘲笑別人' },
+        ],
+      },
+    },
+    {
+      id: 'jealous',
+      title: '羡慕小心',
+      question: '為什麼看到別人有新玩具會不舒服？',
+      stage: 2,
+      x: 50,
+      y: 48,
+      icon: 'compare',
+      stickerLabel: '心情平衡師',
+      explanation:
+        '那可能是羡慕或嫉妒，代表你也想要、很在意。先承認感覺，再練習祝福別人或表達需求。',
+      interact: {
+        prompt: '心裡不舒服時，可以？',
+        kind: 'pick',
+        hint: '先承認感覺。',
+        options: [
+          { id: 'name', label: '說出「我有點羨慕」', correct: true },
+          { id: 'grab', label: '立刻搶走別人的東西' },
+          { id: 'deny', label: '假裝自己沒感覺' },
+        ],
+      },
+    },
+    {
+      id: 'lonely',
+      title: '孤單時刻',
+      question: '為什麼一個人時會覺得孤單？',
+      stage: 2,
+      x: 80,
+      y: 54,
+      icon: 'lonely',
+      stickerLabel: '連結小使者',
+      explanation:
+        '人需要連結與陪伴。孤單提醒我們想靠近別人。可以找朋友玩，或先溫柔陪自己一下。',
+      interact: {
+        prompt: '覺得孤單時，好做法是？',
+        kind: 'pick',
+        hint: '尋求連結。',
+        options: [
+          { id: 'connect', label: '找人聊聊或一起玩', correct: true },
+          { id: 'mean', label: '對別人發脾氣趕走大家' },
+          { id: 'forever', label: '決定永遠不交朋友' },
+        ],
+      },
+    },
+    {
+      id: 'sorry',
+      title: '道歉勇氣',
+      question: '為什麼做錯事要道歉？',
+      stage: 3,
+      x: 22,
+      y: 74,
+      icon: 'sorry',
+      stickerLabel: '道歉小勇者',
+      explanation:
+        '道歉表示看見對方的感受，也願意負責。真誠的「對不起」能修復關係，讓大家重新開始。',
+      interact: {
+        prompt: '真誠道歉比較像？',
+        kind: 'pick',
+        hint: '負責與修復。',
+        options: [
+          { id: 'care', label: '承認錯誤並在乎對方感受', correct: true },
+          { id: 'fake', label: '隨便說一句就跑走' },
+          { id: 'blame', label: '把錯全推給別人' },
+        ],
+      },
+    },
+    {
+      id: 'fear-dark',
+      title: '害怕黑暗',
+      question: '為什麼有人會怕黑？',
+      stage: 3,
+      x: 50,
+      y: 70,
+      icon: 'night',
+      stickerLabel: '勇敢小夜燈',
+      explanation:
+        '看不清時大腦容易想像危險，所以怕黑很常見。開小燈、跟家人說、慢慢練習，都會有幫助。',
+      interact: {
+        prompt: '怕黑時可以怎麼做？',
+        kind: 'pick',
+        hint: '尋求安全感。',
+        options: [
+          { id: 'light', label: '開小夜燈並告訴家人', correct: true },
+          { id: 'mock', label: '笑自己很沒用' },
+          { id: 'force', label: '硬撐什麼都不說' },
+        ],
+      },
+    },
+    {
+      id: 'calm-down',
+      title: '讓自己冷靜',
+      question: '心情很亂時可以怎麼辦？',
+      stage: 3,
+      x: 78,
+      y: 76,
+      icon: 'calm',
+      stickerLabel: '冷靜小達人',
+      explanation:
+        '可以深呼吸、喝水、畫畫、走走，或找信任的人說。讓身體先緩一下，腦袋會比較清楚。',
+      interact: {
+        prompt: '心情很亂時，溫柔步驟是？',
+        kind: 'order',
+        hint: '停、緩、再說。',
+        options: [
+          { id: 'pause', label: '先停一下' },
+          { id: 'breathe', label: '慢慢呼吸或休息' },
+          { id: 'talk', label: '再決定怎麼說或做' },
+        ],
+        correctOrder: ['pause', 'breathe', 'talk'],
+      },
+    },
+  ],
+  courage: {
+    id: 'emotion-courage',
+    title: '勇氣挑戰：說出我的感覺',
+    situation: '你在教室裡有點難過，可是不知道怎麼說。你會怎麼做？',
+    options: [
+      {
+        id: 'say',
+        label: '小聲說：「我現在有點難過。」',
+        tone: 'best',
+        feedback: '說出來就是大勇氣！別人比較知道怎麼陪你。',
+      },
+      {
+        id: 'draw',
+        label: '先畫下來或寫一個「難」字給老師看。',
+        tone: 'ok',
+        feedback: '用畫的也很棒。有機會再補一句話會更清楚。',
+      },
+      {
+        id: 'bottle',
+        label: '全部悶在心裡，假裝開心。',
+        tone: 'retry',
+        feedback: '感覺悶太久會更辛苦。再選一次：試著說一小句。',
+      },
+    ],
+  },
+}

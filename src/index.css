@@ -1,0 +1,55 @@
+:root {
+  --bg-a: #dff6f1;
+  --bg-b: #fff4d6;
+  --ink: #1c2b2a;
+  --muted: #5a6e6b;
+  --card: #ffffffee;
+  --teal: #1fa6a0;
+  --amber: #f5a524;
+  --coral: #ff6b4a;
+  --shadow: 0 12px 28px rgba(28, 43, 42, 0.12);
+  --radius: 22px;
+  --font-display: 'Zen Maru Gothic', 'Noto Sans TC', sans-serif;
+  --font-body: 'Noto Sans TC', sans-serif;
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  min-height: 100dvh;
+  background:
+    radial-gradient(120% 80% at 10% -10%, #ffe8a8 0%, transparent 45%),
+    radial-gradient(90% 70% at 100% 0%, #9de8df 0%, transparent 40%),
+    linear-gradient(165deg, var(--bg-a), var(--bg-b));
+  background-attachment: fixed;
+}
+
+button,
+a {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+}
