@@ -23,7 +23,7 @@ export const emotionTheme: ThemeWorld = {
       interact: {
         prompt: '想哭時，哪一句對自己最溫柔？',
         kind: 'pick',
-        hint: '允許自己有感覺。',
+        hint: '難過時，可以怎麼對自己溫柔一點？',
         options: [
           { id: 'ok', label: '「哭一下沒關係，我在。」', correct: true },
           { id: 'bad', label: '「哭就是丟臉。」' },
@@ -45,7 +45,7 @@ export const emotionTheme: ThemeWorld = {
       interact: {
         prompt: '生氣熱熱時，先做哪一步比較好？',
         kind: 'pick',
-        hint: '先冷靜。',
+        hint: '生氣時身體很熱，先做什麼比較好？',
         options: [
           { id: 'breathe', label: '停一下，慢慢吸吐氣', correct: true },
           { id: 'hit', label: '立刻打人或砸東西' },
@@ -67,7 +67,7 @@ export const emotionTheme: ThemeWorld = {
       interact: {
         prompt: '上台前可以對自己說？',
         kind: 'order',
-        hint: '承認、允許、嘗試。',
+        hint: '上台前緊張，可以怎麼跟自己說話？',
         options: [
           { id: 'notice', label: '「我現在有點緊張。」' },
           { id: 'ok', label: '「緊張沒關係。」' },
@@ -90,7 +90,7 @@ export const emotionTheme: ThemeWorld = {
       interact: {
         prompt: '有好消息時，溫柔做法是？',
         kind: 'pick',
-        hint: '可以分享。',
+        hint: '開心時，跟別人說會怎樣？',
         options: [
           { id: 'share', label: '跟信任的人分享開心', correct: true },
           { id: 'hide', label: '永遠不准說出口' },
@@ -112,7 +112,7 @@ export const emotionTheme: ThemeWorld = {
       interact: {
         prompt: '心裡不舒服時，可以？',
         kind: 'pick',
-        hint: '先承認感覺。',
+        hint: '心裡不舒服時，要不要先說出來？',
         options: [
           { id: 'name', label: '說出「我有點羨慕」', correct: true },
           { id: 'grab', label: '立刻搶走別人的東西' },
@@ -134,7 +134,7 @@ export const emotionTheme: ThemeWorld = {
       interact: {
         prompt: '覺得孤單時，好做法是？',
         kind: 'pick',
-        hint: '尋求連結。',
+        hint: '孤單時，可以找誰陪陪你？',
         options: [
           { id: 'connect', label: '找人聊聊或一起玩', correct: true },
           { id: 'mean', label: '對別人發脾氣趕走大家' },
@@ -156,7 +156,7 @@ export const emotionTheme: ThemeWorld = {
       interact: {
         prompt: '真誠道歉比較像？',
         kind: 'pick',
-        hint: '負責與修復。',
+        hint: '做錯事之後，怎樣比較能和好？',
         options: [
           { id: 'care', label: '承認錯誤並在乎對方感受', correct: true },
           { id: 'fake', label: '隨便說一句就跑走' },
@@ -178,7 +178,7 @@ export const emotionTheme: ThemeWorld = {
       interact: {
         prompt: '怕黑時可以怎麼做？',
         kind: 'pick',
-        hint: '尋求安全感。',
+        hint: '怕黑時，怎樣會比較安心？',
         options: [
           { id: 'light', label: '開小夜燈並告訴家人', correct: true },
           { id: 'mock', label: '笑自己很沒用' },
@@ -200,7 +200,7 @@ export const emotionTheme: ThemeWorld = {
       interact: {
         prompt: '心情很亂時，溫柔步驟是？',
         kind: 'order',
-        hint: '停、緩、再說。',
+        hint: '心情很亂時，要不要先停一下？',
         options: [
           { id: 'pause', label: '先停一下' },
           { id: 'breathe', label: '慢慢呼吸或休息' },

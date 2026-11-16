@@ -23,7 +23,7 @@ export const labTheme: ThemeWorld = {
       interact: {
         prompt: '鹽「消失」其實是？',
         kind: 'pick',
-        hint: '分散在水裡。',
+        hint: '鹽真的不見了，還是還在水裡？',
         options: [
           { id: 'dissolve', label: '溶解分散在水中', correct: true },
           { id: 'gone', label: '蒸發到外太空' },
@@ -45,7 +45,7 @@ export const labTheme: ThemeWorld = {
       interact: {
         prompt: '冰會浮，是因為？',
         kind: 'pick',
-        hint: '密度比較小。',
+        hint: '冰塊跟水，誰比較「輕飄飄」？',
         options: [
           { id: 'light', label: '冰的密度比液態水小', correct: true },
           { id: 'mag', label: '冰塊有磁鐵' },
@@ -67,7 +67,7 @@ export const labTheme: ThemeWorld = {
       interact: {
         prompt: '黃＋藍顏料，常常得到？',
         kind: 'pick',
-        hint: '想想草地的顏色。',
+        hint: '兩種顏色混在一起，會變成什麼感覺？',
         options: [
           { id: 'green', label: '綠色', correct: true },
           { id: 'pink', label: '粉紅色' },
@@ -89,7 +89,7 @@ export const labTheme: ThemeWorld = {
       interact: {
         prompt: '冒泡主要產生了什麼？',
         kind: 'pick',
-        hint: '一種氣體。',
+        hint: '泡泡裡面裝的是什麼？',
         options: [
           { id: 'co2', label: '二氧化碳氣體', correct: true },
           { id: 'candy', label: '隱形糖果雨' },
@@ -111,7 +111,7 @@ export const labTheme: ThemeWorld = {
       interact: {
         prompt: '哪一樣最可能被吸住？',
         kind: 'pick',
-        hint: '鐵製品。',
+        hint: '哪一種東西比較容易被吸住？',
         options: [
           { id: 'clip', label: '鐵製迴紋針', correct: true },
           { id: 'wood', label: '小木棒' },
@@ -133,7 +133,7 @@ export const labTheme: ThemeWorld = {
       interact: {
         prompt: '比較容易浮的是？',
         kind: 'pick',
-        hint: '輕、空心。',
+        hint: '什麼樣的東西比較容易浮起來？',
         options: [
           { id: 'ball', label: '充氣小皮球', correct: true },
           { id: 'rock', label: '實心大石頭' },
@@ -155,7 +155,7 @@ export const labTheme: ThemeWorld = {
       interact: {
         prompt: '影子變長短的過程？',
         kind: 'order',
-        hint: '光、擋住、角度。',
+        hint: '影子長短，跟光源位置有關嗎？',
         options: [
           { id: 'light', label: '有光線照射' },
           { id: 'block', label: '身體擋住光線' },
@@ -178,7 +178,7 @@ export const labTheme: ThemeWorld = {
       interact: {
         prompt: '頭髮豎起主要跟什麼有關？',
         kind: 'pick',
-        hint: '摩擦產生的電。',
+        hint: '摩擦之後，頭髮為什麼會亂翹？',
         options: [
           { id: 'charge', label: '摩擦造成的靜電', correct: true },
           { id: 'wind', label: '房間突然刮颱風' },
@@ -200,7 +200,7 @@ export const labTheme: ThemeWorld = {
       interact: {
         prompt: '鏡子能照人，是因為？',
         kind: 'pick',
-        hint: '光被彈回來。',
+        hint: '鏡子裡的樣子，光是怎麼回來的？',
         options: [
           { id: 'reflect', label: '光滑表面反射光線', correct: true },
           { id: 'draw', label: '鏡子會自己畫畫' },

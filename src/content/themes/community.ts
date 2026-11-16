@@ -23,7 +23,7 @@ export const communityTheme: ThemeWorld = {
       interact: {
         prompt: '紅燈亮時應該？',
         kind: 'pick',
-        hint: '先停住。',
+        hint: '紅燈亮時，最安全的做法是什麼？',
         options: [
           { id: 'stop', label: '停在安全的地方等候', correct: true },
           { id: 'run', label: '快跑衝過去' },
@@ -45,7 +45,7 @@ export const communityTheme: ThemeWorld = {
       interact: {
         prompt: '空寶特瓶通常丟？',
         kind: 'pick',
-        hint: '可以回收。',
+        hint: '空瓶子應該丟去哪裡比較好？',
         options: [
           { id: 'recycle', label: '資源回收', correct: true },
           { id: 'food', label: '跟剩菜丟在一起' },
@@ -67,7 +67,7 @@ export const communityTheme: ThemeWorld = {
       interact: {
         prompt: '出門騎車的正確順序？',
         kind: 'order',
-        hint: '戴、扣、出發。',
+        hint: '騎車出門前，安全帽要先做好哪幾步？',
         options: [
           { id: 'wear', label: '戴上安全帽' },
           { id: 'buckle', label: '把帶子扣好' },
@@ -90,7 +90,7 @@ export const communityTheme: ThemeWorld = {
       interact: {
         prompt: '買東西人很多時，好做法是？',
         kind: 'pick',
-        hint: '輪流。',
+        hint: '人很多時，怎樣比較公平？',
         options: [
           { id: 'line', label: '乖乖排隊等候', correct: true },
           { id: 'cut', label: '插隊比較快' },
@@ -112,7 +112,7 @@ export const communityTheme: ThemeWorld = {
       interact: {
         prompt: '在圖書館比較合適的是？',
         kind: 'pick',
-        hint: '尊重他人。',
+        hint: '圖書館裡，別人正在做什麼？',
         options: [
           { id: 'quiet', label: '輕聲走路、安靜閱讀', correct: true },
           { id: 'shout', label: '大聲玩遊戲' },
@@ -134,7 +134,7 @@ export const communityTheme: ThemeWorld = {
       interact: {
         prompt: '看到同學東西掉了，可以？',
         kind: 'pick',
-        hint: '伸出援手。',
+        hint: '看到同學有困難，可以怎麼幫忙？',
         options: [
           { id: 'help', label: '提醒或幫忙撿起來', correct: true },
           { id: 'laugh', label: '嘲笑他很笨' },
@@ -156,7 +156,7 @@ export const communityTheme: ThemeWorld = {
       interact: {
         prompt: '過馬路的好習慣是？',
         kind: 'order',
-        hint: '停、看、走。',
+        hint: '過馬路時，安全順序是什麼？',
         options: [
           { id: 'stop', label: '先停在安全處' },
           { id: 'look', label: '左右看清楚' },
@@ -179,7 +179,7 @@ export const communityTheme: ThemeWorld = {
       interact: {
         prompt: '溜滑梯很多人時，好做法是？',
         kind: 'pick',
-        hint: '輪流。',
+        hint: '大家一起玩時，怎樣比較不會吵架？',
         options: [
           { id: 'turn', label: '排隊輪流，不推人', correct: true },
           { id: 'block', label: '一直占著不讓人' },
@@ -201,7 +201,7 @@ export const communityTheme: ThemeWorld = {
       interact: {
         prompt: '看到清潔工作時，可以？',
         kind: 'pick',
-        hint: '表達感謝。',
+        hint: '有人幫忙維持乾淨，我們可以怎麼回應？',
         options: [
           { id: 'thanks', label: '說謝謝，並不亂丟垃圾', correct: true },
           { id: 'litter', label: '故意丟更多垃圾' },

@@ -29,7 +29,7 @@ export function Scene() {
     <main className="page scene-page">
       <header className="topbar">
         <Link to="/" className="back">
-          ← 地圖
+          ← 首頁
         </Link>
         <div className="topbar__title">
           <Icon name={theme.icon} size={22} /> {theme.name}

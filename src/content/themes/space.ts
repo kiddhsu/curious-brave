@@ -23,7 +23,7 @@ export const spaceTheme: ThemeWorld = {
       interact: {
         prompt: '白天黑夜主要是因為？',
         kind: 'pick',
-        hint: '地球在轉。',
+        hint: '白天和晚上，是誰在換位置？',
         options: [
           { id: 'spin', label: '地球自轉，有的面向太陽', correct: true },
           { id: 'switch', label: '太陽每天關機重開' },
@@ -45,7 +45,7 @@ export const spaceTheme: ThemeWorld = {
       interact: {
         prompt: '我們看見的月光來自？',
         kind: 'pick',
-        hint: '反射誰的光？',
+        hint: '月亮自己會發光嗎？',
         options: [
           { id: 'sun', label: '太陽光照在月球上再反射', correct: true },
           { id: 'bulb', label: '月亮裡面的燈泡' },
@@ -67,7 +67,7 @@ export const spaceTheme: ThemeWorld = {
       interact: {
         prompt: '太陽帶給地球？',
         kind: 'pick',
-        hint: '光與熱。',
+        hint: '沒有太陽，地球會少了什麼？',
         options: [
           { id: 'light', label: '光和熱', correct: true },
           { id: 'snow-only', label: '只有冰塊' },
@@ -89,7 +89,7 @@ export const spaceTheme: ThemeWorld = {
       interact: {
         prompt: '星星閃爍多半因為？',
         kind: 'pick',
-        hint: '跟大氣有關。',
+        hint: '星光一路來到眼睛，中間經過什麼？',
         options: [
           { id: 'air', label: '星光被大氣層攪動', correct: true },
           { id: 'wink', label: '星星在跟人打招呼' },
@@ -111,7 +111,7 @@ export const spaceTheme: ThemeWorld = {
       interact: {
         prompt: '流星的過程？',
         kind: 'order',
-        hint: '進入、發光、碎片。',
+        hint: '流星比較像整顆星星掉下來嗎？',
         options: [
           { id: 'enter', label: '小石頭衝進大氣層' },
           { id: 'glow', label: '摩擦發出亮光' },
@@ -134,7 +134,7 @@ export const spaceTheme: ThemeWorld = {
       interact: {
         prompt: '四季變化跟什麼有關？',
         kind: 'pick',
-        hint: '地球斜斜繞太陽。',
+        hint: '一年裡為什麼有時候熱、有時候涼？',
         options: [
           { id: 'tilt', label: '地球傾斜並繞太陽轉', correct: true },
           { id: 'fan', label: '太陽用電風扇吹' },
@@ -156,7 +156,7 @@ export const spaceTheme: ThemeWorld = {
       interact: {
         prompt: '月球不適合直接居住，因為？',
         kind: 'pick',
-        hint: '空氣與環境。',
+        hint: '月球跟地球，哪裡差很多？',
         options: [
           { id: 'air', label: '缺少可呼吸空氣，環境嚴苛', correct: true },
           { id: 'wifi', label: '沒有免費 Wi‑Fi' },
@@ -178,7 +178,7 @@ export const spaceTheme: ThemeWorld = {
       interact: {
         prompt: '太空看起來暗，差在？',
         kind: 'pick',
-        hint: '空氣會散射光。',
+        hint: '地球白天天空為什麼亮亮的？',
         options: [
           { id: 'scatter', label: '幾乎沒有空氣散射陽光', correct: true },
           { id: 'paint', label: '有人把太空塗黑' },
@@ -200,7 +200,7 @@ export const spaceTheme: ThemeWorld = {
       interact: {
         prompt: '火箭往上飛，是因為？',
         kind: 'pick',
-        hint: '向下噴、向上推。',
+        hint: '火箭怎麼往上「推」自己？',
         options: [
           { id: 'thrust', label: '向下噴氣產生推力', correct: true },
           { id: 'balloon', label: '綁很多生日氣球' },

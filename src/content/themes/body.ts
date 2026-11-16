@@ -23,7 +23,7 @@ export const bodyTheme: ThemeWorld = {
       interact: {
         prompt: '骨頭最重要的工作是？',
         kind: 'pick',
-        hint: '想想支架跟保護。',
+        hint: '想想：沒有骨頭，身體會怎樣？',
         options: [
           { id: 'frame', label: '支撐身體、保護器官', correct: true },
           { id: 'sing', label: '專門用來唱歌' },
@@ -45,7 +45,7 @@ export const bodyTheme: ThemeWorld = {
       interact: {
         prompt: '眨眼比較像在做什麼？',
         kind: 'pick',
-        hint: '清潔、保濕。',
+        hint: '眨眼對眼睛有什麼幫助？',
         options: [
           { id: 'clean', label: '幫眼睛清潔保濕', correct: true },
           { id: 'sleep', label: '強迫立刻睡著' },
@@ -67,7 +67,7 @@ export const bodyTheme: ThemeWorld = {
       interact: {
         prompt: '心臟主要在做什麼？',
         kind: 'pick',
-        hint: '送血液。',
+        hint: '心跳跟全身力氣有沒有關係？',
         options: [
           { id: 'pump', label: '把血液送到全身', correct: true },
           { id: 'think', label: '專門負責想功課' },
@@ -89,7 +89,7 @@ export const bodyTheme: ThemeWorld = {
       interact: {
         prompt: '肚子咕嚕多半是因為？',
         kind: 'pick',
-        hint: '腸子在工作。',
+        hint: '肚子咕嚕時，身體裡誰在動？',
         options: [
           { id: 'move', label: '腸子推動食物和氣體', correct: true },
           { id: 'radio', label: '肚子裡藏收音機' },
@@ -111,7 +111,7 @@ export const bodyTheme: ThemeWorld = {
       interact: {
         prompt: '流汗降溫的步驟？',
         kind: 'order',
-        hint: '先變熱，再出汗，再降溫。',
+        hint: '想想運動後身體先發生什麼變化？',
         options: [
           { id: 'hot', label: '運動讓身體變熱' },
           { id: 'out', label: '皮膚出汗' },
@@ -134,7 +134,7 @@ export const bodyTheme: ThemeWorld = {
       interact: {
         prompt: '味道主要靠哪裡察覺？',
         kind: 'pick',
-        hint: '想想舌頭。',
+        hint: '吃東西時，哪個地方最能「嚐」？',
         options: [
           { id: 'tongue', label: '舌頭上的味蕾', correct: true },
           { id: 'elbow', label: '手肘皮膚' },
@@ -156,7 +156,7 @@ export const bodyTheme: ThemeWorld = {
       interact: {
         prompt: '指紋特別的地方是？',
         kind: 'pick',
-        hint: '每人都不太一樣。',
+        hint: '指紋像不像每個人的小記號？',
         options: [
           { id: 'unique', label: '幾乎人人不同', correct: true },
           { id: 'same', label: '全班都一模一樣' },
@@ -178,7 +178,7 @@ export const bodyTheme: ThemeWorld = {
       interact: {
         prompt: '睡飽後比較容易怎樣？',
         kind: 'pick',
-        hint: '精神與學習。',
+        hint: '睡飽隔天，感覺有什麼不同？',
         options: [
           { id: 'focus', label: '比較有精神、好專心', correct: true },
           { id: 'fly', label: '立刻會飛' },
@@ -200,7 +200,7 @@ export const bodyTheme: ThemeWorld = {
       interact: {
         prompt: '想讓力氣變大，可以？',
         kind: 'pick',
-        hint: '多用身體活動。',
+        hint: '力氣是怎樣練出來的？',
         options: [
           { id: 'move', label: '常活動、練習身體', correct: true },
           { id: 'sit', label: '整天完全不動' },

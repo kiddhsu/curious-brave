@@ -84,7 +84,7 @@ export function WhyFlow() {
     <main className="page why-page">
       <header className="topbar">
         <Link to={`/scene/${theme.id}`} className="back">
-          ← 場景
+          ← 探險
         </Link>
         <div className="topbar__title">{spot.title}</div>
         <span />
@@ -184,7 +184,7 @@ export function WhyFlow() {
           continueLabel={
             isCourageUnlocked(theme.id, latest.stickers)
               ? '去勇氣挑戰'
-              : '回場景繼續探索'
+              : '回探險繼續玩'
           }
         />
       )}

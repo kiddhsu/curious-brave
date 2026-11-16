@@ -210,17 +210,29 @@
 
 .topbar {
   display: grid;
-  grid-template-columns: 72px 1fr 56px;
+  grid-template-columns: auto 1fr 56px;
   align-items: center;
   gap: 8px;
 }
 
 .back {
   text-decoration: none;
-  font-weight: 700;
+  font-weight: 800;
+  font-family: var(--font-display);
   min-height: 44px;
+  padding: 0 14px;
   display: inline-flex;
   align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  border: 2px solid color-mix(in srgb, var(--teal) 40%, white);
+  background: #fff;
+  color: var(--teal);
+}
+
+.back:active {
+  transform: scale(0.98);
+  background: color-mix(in srgb, var(--teal) 10%, white);
 }
 
 .topbar__title {
@@ -532,10 +544,13 @@
   padding: 14px;
   background: color-mix(in srgb, var(--amber) 16%, white);
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .courage-feedback p {
-  margin: 0 0 8px;
+  margin: 0;
   line-height: 1.5;
   font-weight: 700;
 }

@@ -22,7 +22,7 @@ export const creaturesTheme: ThemeWorld = {
       interact: {
         prompt: '羽毛對鳥的幫助包含？',
         kind: 'pick',
-        hint: '保暖跟飛行。',
+        hint: '羽毛對鳥的生活有什麼用？',
         options: [
           { id: 'fly', label: '保暖，也幫忙飛行', correct: true },
           { id: 'type', label: '用來打字' },
@@ -44,7 +44,7 @@ export const creaturesTheme: ThemeWorld = {
       interact: {
         prompt: '綠葉子主要在幫忙？',
         kind: 'pick',
-        hint: '跟陽光有關。',
+        hint: '葉子為什麼要朝向亮亮的地方？',
         options: [
           { id: 'food', label: '用陽光做養分', correct: true },
           { id: 'tv', label: '看電視節目' },
@@ -66,7 +66,7 @@ export const creaturesTheme: ThemeWorld = {
       interact: {
         prompt: '魚在水裡靠什麼呼吸？',
         kind: 'pick',
-        hint: '兩側的特殊器官。',
+        hint: '魚在水裡用什麼地方「呼吸」？',
         options: [
           { id: 'gills', label: '鰓', correct: true },
           { id: 'nose', label: '跟人一樣的鼻子' },
@@ -88,7 +88,7 @@ export const creaturesTheme: ThemeWorld = {
       interact: {
         prompt: '貓舔毛比較像在？',
         kind: 'pick',
-        hint: '清潔與梳理。',
+        hint: '貓舔毛，比較像在做什麼日常事？',
         options: [
           { id: 'groom', label: '清理並梳毛', correct: true },
           { id: 'paint', label: '幫自己塗顏色' },
@@ -110,7 +110,7 @@ export const creaturesTheme: ThemeWorld = {
       interact: {
         prompt: '種子發芽常見需要？',
         kind: 'order',
-        hint: '水、溫度、空氣。',
+        hint: '種子發芽，需要什麼樣的環境？',
         options: [
           { id: 'water', label: '有水分' },
           { id: 'warm', label: '溫度合適' },
@@ -133,7 +133,7 @@ export const creaturesTheme: ThemeWorld = {
       interact: {
         prompt: '螞蟻排隊多半靠？',
         kind: 'pick',
-        hint: '氣味路線。',
+        hint: '螞蟻怎麼知道該往哪走？',
         options: [
           { id: 'scent', label: '留下氣味給同伴跟', correct: true },
           { id: 'map', label: '每隻都帶紙地圖' },
@@ -155,7 +155,7 @@ export const creaturesTheme: ThemeWorld = {
       interact: {
         prompt: '青蛙喜歡水邊，主因之一是？',
         kind: 'pick',
-        hint: '皮膚與成長。',
+        hint: '青蛙小時候住在哪裡長大？',
         options: [
           { id: 'wet', label: '皮膚要濕潤，幼體在水裡長', correct: true },
           { id: 'boat', label: '要開遊艇' },
@@ -177,7 +177,7 @@ export const creaturesTheme: ThemeWorld = {
       interact: {
         prompt: '蜜蜂做蜂蜜主要是為了？',
         kind: 'pick',
-        hint: '群體的食物。',
+        hint: '蜂蜜對蜜蜂來說是做什麼用的？',
         options: [
           { id: 'food', label: '當蜂群的糧食', correct: true },
           { id: 'glue', label: '黏住敵人鞋子' },
@@ -199,7 +199,7 @@ export const creaturesTheme: ThemeWorld = {
       interact: {
         prompt: '根的重要工作包含？',
         kind: 'pick',
-        hint: '固定與吸水。',
+        hint: '根埋在土裡，最重要是幫忙什麼？',
         options: [
           { id: 'hold', label: '固定植物並吸收水分', correct: true },
           { id: 'fly', label: '讓植物飛起來' },

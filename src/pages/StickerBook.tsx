@@ -12,7 +12,7 @@ export function StickerBook() {
     <main className="page book-page">
       <header className="topbar">
         <Link to="/" className="back">
-          ← 地圖
+          ← 首頁
         </Link>
         <div className="topbar__title">我的貼紙冊</div>
         <span />

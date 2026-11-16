@@ -29,7 +29,7 @@ export function Courage() {
       <main className="page">
         <p>先收集完這個主題的貼紙，再來挑戰勇氣喔。</p>
         <Link className="btn btn--primary" to={`/scene/${theme.id}`}>
-          回場景
+          回探險
         </Link>
       </main>
     )
@@ -55,7 +55,7 @@ export function Courage() {
     <main className="page courage-page">
       <header className="topbar">
         <Link to={`/scene/${theme.id}`} className="back">
-          ← 場景
+          ← 探險
         </Link>
         <div className="topbar__title">勇氣挑戰</div>
         <span />
@@ -106,7 +106,7 @@ export function Courage() {
                   className="btn btn--primary btn--block"
                   onClick={() => navigate('/')}
                 >
-                  回地圖繼續玩
+                  回首頁繼續玩
                 </button>
                 <button
                   type="button"
